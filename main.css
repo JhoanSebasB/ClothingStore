@@ -15,18 +15,6 @@
     font-family: 'Rubik', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul {
-    margin: 0;
-    padding: 0;
-}
-
-ul {
-    list-style-type: none;
-}
-
-a {
-    text-decoration: none;
-}
 
 .wrapper {
     display: grid;
@@ -46,10 +34,7 @@ aside {
    
 }
 
-.logo {
-    font-weight: 400;
-    font-size: 1.3rem;
-}
+
 
 .menu {
     display: flex;
@@ -205,62 +190,49 @@ aside {
 
 .disabled {
     display: none;
+    
 }
 
 
 
 
-/* INDEX*/
+
 
            /*  Botones del index  */
-.btn {
-    --color: #560bad;
-    font-family: inherit;
-    display: inline-block;
-    width: 8em;
-    height: 2.6em;
-    line-height: 2.5em;
-    margin: 20px;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid var(--color);
-    transition: color .5s;
-    z-index: 1;
-    font-size: 17px;
-    border-radius: 6px;
-    font-weight: 500;
-    color: var(--color);
-   }
-   
-   .btn:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: var(--color);
-    height: 150px;
-    width: 200px;
-    border-radius: 50%;
-   }
-   
-   .btn:hover {
-    color: #fff;
-   }
-   
-   .btn:before {
-    top: 100%;
-    left: 100%;
-    transition: all .7s;
-   }
-   
-   .btn:hover:before {
-    top: -30px;
-    left: -30px;
-   }
-   
-   .btn:active:before {
-    background: #3a0ca3;
-    transition: background 0s;
-   }
-  
+           .btn {
+            font-family: inherit;
+            display: inline-block;
+            width: 8em;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.5s, text-decoration 0.5s;
+            font-size: 17px;
+            border-radius: 6px;
+            font-weight: 500;
+            color: #fff;
+            background-color: transparent;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            color: #fff;
+            
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #fff; 
+            transition: width 0.3s ease;   
+        }
 
-   
+        .btn:hover::after {
+            width: 100%; 
+        }
+        
