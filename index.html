@@ -14,6 +14,7 @@
 <body>
      
     <div class="wrapper">
+        <div class="frase" >Ten la libertad de usar lo que te haga sentir UNICO</div>
         <header class="header-mobile">
             <h1 class="logo">MegaShop</h1>
             
@@ -32,17 +33,10 @@
                 </a>
             </header>
             <main class="boton">
-            
                 <div id="contenedor-productos" class="contenedor-productos">
-                   
-                        <a href="Hombre.html">
-                            <button class="btn"> HOMBRE </button>
-                        </a>   
-            
-                        <a href="Mujer.html">
-                            <button class="btn"> MUJER </button>
-                        </a>  
-                    
+                    <button class="btn" data-filter="hombre">HOMBRE</button>
+                    <button class="btn" data-filter="mujer">MUJER</button>
+                    <button class="btn" data-filter="all">TODOS</button>
                 </div>
             </main>
             
@@ -52,6 +46,28 @@
         <div class="carousel">
             <div class="carousel-wrapper">
                 <div class="carousel-text" id="carouselText"></div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card" data-category="hombre">
+                <img src="https://nikeco.vtexassets.com/arquivos/ids/617185-800-auto?v=638549415366500000&width=800&height=auto&aspect=true" alt="Card Image" class="card-image">
+                <p class="card-name">Camisa Hombre</p>
+                <p class="card-price">$20.00</p>
+            </div>
+            <div class="card" data-category="mujer">
+                <img src="https://i.imgur.com/32nVWzl.png" alt="Card Image" class="card-image">
+                <p class="card-name">Blusa Mujer</p>
+                <p class="card-price">$18.00</p>
+            </div>
+            <div class="card" data-category="hombre">
+                <img src="https://i.imgur.com/32nVWzl.png" alt="Card Image" class="card-image">
+                <p class="card-name">Pantalón Hombre</p>
+                <p class="card-price">$25.00</p>
+            </div>
+            <div class="card" data-category="mujer">
+                <img src="https://i.imgur.com/32nVWzl.png" alt="Card Image" class="card-image">
+                <p class="card-name">Vestido Mujer</p>
+                <p class="card-price">$30.00</p>
             </div>
         </div>
         
