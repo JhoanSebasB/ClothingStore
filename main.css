@@ -15,6 +15,13 @@
     font-family: 'Rubik', sans-serif;
 }
 
+.frase{
+    background-color: #000000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
 
 .wrapper {
     display: grid;
@@ -286,4 +293,50 @@ width: 100%;
         opacity: 0;
     }
 }
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.card {
+    width: 150px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    margin: 1rem;
+}
+
+.card.hidden {
+    display: none; /* Oculta completamente las tarjetas */
+}
+
+
+
+.card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.card-name {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.card-price {
+    font-size: 14px;
+    color: #555;
+}
+
 
