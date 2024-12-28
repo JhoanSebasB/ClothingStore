@@ -298,13 +298,7 @@ main {
         grid-template-columns: 1fr;
     }
    /* Estilo del contenedor principal */
-  .boton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Ocupa toda la altura de la pantalla */
-    background-color: #f4f4f4; /* Color de fondo */
-  }
+  
 
   /* Contenedor de los botones */
   .contenedor-productos {
