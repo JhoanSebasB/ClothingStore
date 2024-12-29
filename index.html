@@ -5,31 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClotingStore</title>
+    <meta name="description" content="Discover the latest fashion trends for men and women at MegaShop. From stylish sneakers to elegant dresses, find your perfect look today!">
+
+    <!-- Css -->
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="responsive.css">
-    <link rel="stylesheet" type="text/css" href="fonts/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- Fonts -->
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_name" />
+    
+    <!-- swiper/slider -->
+   
     
 </head>
 <body>
-     
+    
     <div class="wrapper">
         <div class="frase" >Ten la libertad de usar lo que te haga sentir UNICO</div>
         <header class="header-mobile">
-            <h1 class="logo">MegaShop</h1>
+            <h1 class="logo" >MegaShop</h1>
             
             <button class="open-menu" id="open-menu">
-                <i class="bi bi-list"></i>
+                <span class="material-symbols-outlined">
+                    menu
+                    </span>
             </button>
         </header>
         <aside>
             <button class="close-menu" id="close-menu">
-                <i class="bi bi-x"></i>
+                <span class="material-symbols-outlined">
+                    close
+                    </span>
             </button>
             <div class="as">
-            <header>
+            <header class="hambur">
                 <a href="index.html" class="logo-link">
-                    <h1 class="logo">MegaShop</h1>
+                    <h1 class="logo" >MegaShop</h1>
                 </a>
             </header>
             <main class="boton">
@@ -50,26 +62,82 @@
         </div>
         <div class="card-container">
             <div class="card" data-category="hombre">
-                <img src="https://nikeco.vtexassets.com/arquivos/ids/617185-800-auto?v=638549415366500000&width=800&height=auto&aspect=true" alt="Card Image" class="card-image">
-                <p class="card-name">Camisa Hombre</p>
-                <p class="card-price">$20.00</p>
+                <div class="image-container">
+                    <img id="card-image-1-hombre" alt="Card Image" class="card-image">
+                    
+                    <!-- Botones para cambiar imágenes dentro del mismo color -->
+                    <button class="prev-image" onclick="changeCardImage('prev', 'card-image-1-hombre')" aria-label="Previous Image">
+                        <span class="material-symbols-outlined">arrow_back_ios</span>
+                    </button>
+                    <button class="next-image" onclick="changeCardImage('next', 'card-image-1-hombre')" aria-label="Next Image">
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </button>
+                </div>
+                
+                <!-- Botones para cambiar el color del zapato -->
+                <div class="color-buttons">
+                    <button class="color-btn-black" onclick="changeShoeColor(0, 'card-image-1-hombre')" aria-label="Black Color"></button>
+                    <button class="color-btn-blue" onclick="changeShoeColor(1, 'card-image-1-hombre')" aria-label="Blue Color"></button>
+                    <button class="color-btn-red" onclick="changeShoeColor(2, 'card-image-1-hombre')" aria-label="Red Color"></button>
+                </div>
+                
+                <p class="card-name">Dunk Low</p>
+                <p class="card-price">$550.000</p>
             </div>
+            
             <div class="card" data-category="mujer">
-                <img src="https://i.imgur.com/32nVWzl.png" alt="Card Image" class="card-image">
-                <p class="card-name">Blusa Mujer</p>
-                <p class="card-price">$18.00</p>
+                <div class="image-container">
+                    <img id="card-image-1-mujer" alt="Card Image" class="card-image">
+                    
+                    <!-- Botones para cambiar imágenes dentro del mismo color -->
+                    <button class="prev-image" onclick="changeCardImage('prev', 'card-image-1-mujer')" aria-label="Previous Image">
+                        <span class="material-symbols-outlined">arrow_back_ios</span>
+                    </button>
+                    <button class="next-image" onclick="changeCardImage('next', 'card-image-1-mujer')" aria-label="Next Image">
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </button>
+                </div>
+                
+                <!-- Botones para cambiar el color del zapato -->
+                <div class="color-buttons">
+                    <button class="color-btn-black" onclick="changeShoeColor(0, 'card-image-1-mujer')" aria-label="Black Color"></button>
+                    <button class="color-btn-blue" onclick="changeShoeColor(1, 'card-image-1-mujer')" aria-label="Blue Color"></button>
+                    <button class="color-btn-red" onclick="changeShoeColor(2, 'card-image-1-mujer')" aria-label="Red Color"></button>
+                </div>
+                
+                <p class="card-name">Dunk Low</p>
+                <p class="card-price">$550.000</p>
             </div>
+            
             <div class="card" data-category="hombre">
-                <img src="https://i.imgur.com/32nVWzl.png" alt="Card Image" class="card-image">
+                <img src="" alt="Card Image" class="card-image">
                 <p class="card-name">Pantalón Hombre</p>
                 <p class="card-price">$25.00</p>
             </div>
-            <div class="card" data-category="mujer">
-                <img src="https://i.imgur.com/32nVWzl.png" alt="Card Image" class="card-image">
-                <p class="card-name">Vestido Mujer</p>
-                <p class="card-price">$30.00</p>
+            <div class="card" data-category="hombre">
+                <img src="" alt="Card Image" class="card-image">
+                <p class="card-name">Pantalón Hombre</p>
+                <p class="card-price">$25.00</p>
             </div>
+
+            <!-- Cookies -->
+           <div class="wrap">
+            <header class="h">
+                <span class="material-symbols-outlined">
+                    cookie
+                    </span>
+                <h2>Cookies Consent</h2>
+            </header>
+            <div class="data">
+                <p>We use third-party cookies to improve your experience and offer you personalized ads. By continuing to browse, you agree to the use of cookies. 
+            </div>
+            <div class="butt">
+                <button class="cookie-btn accept">Accept</button>
+                <button class="cookie-btn decline">Decline</button>
+            </div>
+           </div>
         </div>
+        
         
     </div>
     
