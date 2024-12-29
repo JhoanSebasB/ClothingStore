@@ -15,7 +15,7 @@
     font-family: 'Rubik', sans-serif;
 }
 
-.frase{
+.frase {
     background-color: #000000;
     color: #fff;
     display: flex;
@@ -27,11 +27,15 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
     background-color: var(--clr-main);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
 }
 
 aside {
-    padding: 2rem;
-    padding-right: 0;
+    padding: .5rem;
+    padding-left: 2rem;
     color: var(--clr-white);
     position: sticky;
     top: 0;
@@ -39,8 +43,6 @@ aside {
     flex-direction: column;
    
 }
-
-
 
 .menu {
     display: flex;
@@ -120,14 +122,6 @@ aside {
     font-size: .85rem;
 }
 
-/* Estilo general */
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-
 .titulo-principal {
     color: var(--clr-main);
     margin-bottom: 2rem;
@@ -137,6 +131,7 @@ aside {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    
 }
 
 .producto-imagen {
@@ -177,88 +172,76 @@ aside {
     color: var(--clr-white);
 }
 
-
-
-
-.header-mobile {
-    display: none;
-}
-
-.close-menu {
-    display: none;
-}
-
+.header-mobile,
+.close-menu,
 .disabled {
     display: none;
     
 }
-            /* Titulo principal*/
+
 .logo-link {
-    text-decoration: none; 
-    color: #000000; 
+    text-decoration: none;
+    color: #000000;
+    background-color: #00aae4;
 }
 
 .logo {
     font-weight: bold;
+   
     
 }
 
-
-           /*  Botones hombre/mujer  */
 .btn {
-font-family: inherit;
-display: inline-block;
-width: 8em;
-position: relative;
-overflow: hidden;
-transition: color 0.5s,text-decoration 0.5s;
-font-size: 17px;
-border-radius: 6px;
-font-weight: 500;
-color: #0000008b;
-background-color: transparent;
-border: none;
-padding: 10px;
-cursor: pointer;       
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.5s, text-decoration 0.5s;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #0000008b;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
 }
-        
+
 .btn:hover {
-color: #000000;
+    color: #000000;
 }
-        
+
 .btn::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 0;
-width: 0;
-height: 2px;
-background-color: #000000; 
-transition: width 0.3s ease;   
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    transition: width 0.3s ease;
 }
 
 .btn:hover::after {
-width: 100%; 
+    width: 100%;
 }
-
-/* Carrusel Informativo */
 
 .carousel {
     position: relative;
-    width: 100%; 
+    width: 100%;
     height: 50px;
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f5f5f5;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    background-color: #f5f5f5;
 }
+
 .carousel-wrapper {
     position: relative;
-    width: 100%; 
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -266,30 +249,30 @@ width: 100%;
     overflow: hidden;
     
 }
+
 .carousel-text {
     position: absolute;
     white-space: nowrap;
     font-size: 1.2rem;
     color: #333;
-    animation: slide 5s infinite; 
-    
+    animation: slide 5s infinite;
 }
 
 @keyframes slide {
     0% {
-        transform: translateX(150%); /* Entra desde la derecha */
+        transform: translateX(150%);
         opacity: 0;
     }
     10% {
-        transform: translateX(0); /* Llega al centro */
+        transform: translateX(0);
         opacity: 1;
     }
     90% {
-        transform: translateX(0); /* Permanece en el centro */
+        transform: translateX(0);
         opacity: 1;
     }
     100% {
-        transform: translateX(-150%); /* Sale por la izquierda */
+        transform: translateX(-150%);
         opacity: 0;
     }
 }
@@ -303,7 +286,8 @@ width: 100%;
 }
 
 .card {
-    width: 150px;
+    width: 400px;
+    height: 450px;
     border: 1px solid #ccc;
     display: flex;
     flex-direction: column;
@@ -313,30 +297,134 @@ width: 100%;
     padding: 10px;
     transition: transform 0.3s ease;
     margin: 1rem;
+    background-color: #fff;
+    margin-top: 50px;
 }
+
 
 .card.hidden {
     display: none; /* Oculta completamente las tarjetas */
 }
 
-
-
 .card img {
-    width: 100px;
+    width: 400px;
     height: auto;
-    margin-bottom: 10px;
+    
 }
 
 .card-name {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 5px;
+    padding: 10px;
 }
 
 .card-price {
-    font-size: 14px;
+    font-size: 16px;
     color: #555;
+    margin-bottom: 5rem;
+    padding-bottom: 50px;
 }
 
 
+.open-menu, .closemenu, button {
+    background-color: #00aae4;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.image-container {
+    position: relative;
+}
+
+.prev-image, .next-image {
+    position: absolute;
+    top: 50%;
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 25px;
+    
+}
+
+.prev-image {
+    left: 0px;
+}
+
+.next-image {
+ right: 0px;
+}
+
+.color-btn-black{
+    background-color: #000000;
+}
+.color-btn-blue{
+    background-color: #409fff;
+}
+.color-btn-red{
+    background-color: #ff0000;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;  
+    display: block; 
+  }
+
+.wrap{
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    max-width: 345px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 8px;
+    padding:  15px 25px 22px;
+    border: 1px solid #333;
+
+}
+
+.wrap .h{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+
+
+  .cookie-btn {
+   
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cookie-btn.accept {
+    background-color: white;
+    color: black;
+}
+
+.cookie-btn.decline {
+    background-color: white;
+    color: black;
+}
+
+.cookie-btn.decline:hover {
+    background-color: red;
+    color: black;
+}
+
+.cookie-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
