@@ -151,19 +151,23 @@
 
 }
 
-@media screen and (min-width: 470px) {
+@media screen and (min-width: 200px) {
+
+    .card img {
+        margin-top: 40px;
+    }
     
     .color-buttons{
-    margin-top: -80px;
+    margin-top: -30px;
     }
     .card-name {
     font-size: 20px;
     }
 
     .card-price {
-    font-size: 12px; /* Ajusta el tamaño de la fuente */
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
     margin-top:-10px;
-    margin-bottom: 100px;
+   
     }
 
     
