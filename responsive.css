@@ -119,7 +119,56 @@
    .hambur{
     margin-top: 24px;
    }
-   
+
+   .card {
+    width: 80%; /* Ajusta el tamaño de las tarjetas al 100% del contenedor */
+    height: 24%; /* Hace que la altura se ajuste automáticamente */
+    margin-top: -25px;
+    margin-bottom: -100px;
+    }
+
+    .card img {
+    width: 100%; /* Hace que las imágenes se ajusten al tamaño de la tarjeta */
+    }
+
+    .material-symbols-outlined{
+        
+        margin: -20px;
+    }
+
+    .color-buttons{
+    margin-top: -60px;
+    }
+    .card-name {
+    font-size: 20px; 
+    
+    }
+
+    .card-price {
+    font-size: 16px; 
+    }
+
+
+}
+
+@media screen and (min-width: 470px) {
+    
+    .color-buttons{
+    margin-top: -80px;
+    }
+    .card-name {
+    font-size: 20px;
+    }
+
+    .card-price {
+    font-size: 12px; /* Ajusta el tamaño de la fuente */
+    margin-top:-10px;
+    margin-bottom: 100px;
+    }
+
+    
+
+    
 }
 
 /* Responsive pc */
