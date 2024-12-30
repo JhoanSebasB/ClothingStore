@@ -121,59 +121,28 @@
    }
 
    .card {
-    width: 80%; /* Ajusta el tamaño de las tarjetas al 100% del contenedor */
-    height: 24%; /* Hace que la altura se ajuste automáticamente */
-    margin-top: -25px;
-    margin-bottom: -100px;
-    }
+    width: 100%; 
+    height: auto; 
+    margin-top: 20px;
+    padding: 10px;
+}
 
-    .card img {
-    width: 100%; /* Hace que las imágenes se ajusten al tamaño de la tarjeta */
-    }
+.card img {
+    width: 100%; 
+}
 
-    .material-symbols-outlined{
-        
-        margin: -20px;
-    }
-
-    .color-buttons{
-    margin-top: -60px;
-    }
-    .card-name {
-    font-size: 20px; 
-    
-    }
-
-    .card-price {
+.card-name {
     font-size: 16px; 
-    }
-
-
 }
 
-@media screen and (min-width: 200px) {
-
-    .card img {
-        margin-top: 40px;
-    }
-    
-    .color-buttons{
-    margin-top: -30px;
-    }
-    .card-name {
-    font-size: 20px;
-    }
-
-    .card-price {
-    font-size: 14px; /* Ajusta el tamaño de la fuente */
-    margin-top:-10px;
-   
-    }
-
-    
-
-    
+.card-price {
+    font-size: 14px; 
+    margin-bottom: 20px; 
+    padding-bottom: 20px; 
 }
+
+
+
 
 /* Responsive pc */
 @media (min-width: 600px) {
@@ -201,3 +170,4 @@
     
 }
 
+}
