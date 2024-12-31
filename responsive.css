@@ -155,15 +155,69 @@
     margin-left: 90%;
     margin-top: 7px;
     }
+
     
+}
 
+@media (max-width: 768px) {
+    .footer-row {
+        display: block;
+        text-align: center;
+    }
 
+    .footer-row > div,
+    .location-info,
+    .legal-info {
+        margin-bottom: 15px;
+    }
 
+    .info {
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+        text-align: center;
+    }
 
+    footer h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
 
-  
+    footer a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .social-links .info {
+        justify-content: center;
+    }
+
+    footer .info {
+        opacity: 1;
+        visibility: visible;
+    }
+    footer .payment-methods .info {
+        display: flex;
+        justify-content: space-around; 
+        gap: 15px; 
+        flex-wrap: wrap;
+    }
     
-    
-    
+    footer .payment-methods .info span {
+        margin: 0;
+        display: inline-block; 
+    }
+
+    footer .support-channel .info {
+        display: flex;
+        justify-content: center;
+        gap: 10px; 
+        flex-wrap: wrap;
+    }
+
+    footer .support-channel .info span {
+        margin: 0; 
+    }
+
 }
 
