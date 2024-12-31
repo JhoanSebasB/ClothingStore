@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link data-react-helmet="true" rel="icon" href="https://nikeco.vteximg.com.br/arquivos/favicon.ico"/><link data-react-helmet="true" rel="canonical" href="https://www.nike.com.co/nike-air-force-1-07-cw2288-001-th4/p"/><link data-react-helmet="true" rel="preload" as="image" href="https://nikeco.vtexassets.com/arquivos/ids/196157-800-auto?v=638343769334600000&amp;width=800&amp;height=auto&amp;aspect=true" crossOrigin="anonymous"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClotingStore</title>
     <meta name="description" content="Discover the latest fashion trends for men and women at MegaShop. From stylish sneakers to elegant dresses, find your perfect look today!">
@@ -14,6 +15,8 @@
     <!-- Fonts -->
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_name" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     
     <!-- swiper/slider -->
    
@@ -24,7 +27,7 @@
     <div class="wrapper">
         <div class="frase" >Ten la libertad de usar lo que te haga sentir UNICO</div>
         <header class="header-mobile">
-            <h1 class="logo" >MegaShop</h1>
+            <img src="https://nikeco.vtexassets.com/assets/vtex/assets-builder/nikeco.nikeco-nike/2.0.33/nike/img/nike-logo___371bc7e687739441af9a7d0a95668bc4.svg" alt="logo" class="logo" >
             
             <button class="open-menu" id="open-menu">
                 <span class="material-symbols-outlined">
@@ -39,18 +42,28 @@
                     </span>
             </button>
             <div class="as">
-            <header class="hambur">
+            <header class="logo-responsive">
                 <a href="index.html" class="logo-link">
-                    <h1 class="logo" >MegaShop</h1>
+                    <img src="https://nikeco.vtexassets.com/assets/vtex/assets-builder/nikeco.nikeco-nike/2.0.33/nike/img/nike-logo___371bc7e687739441af9a7d0a95668bc4.svg" alt="logo" class="logo" >
                 </a>
+                
             </header>
             <main class="boton">
+                <!-- Contenedor de botones para filtrar productos -->
                 <div id="contenedor-productos" class="contenedor-productos">
                     <button class="btn" data-filter="hombre">HOMBRE</button>
                     <button class="btn" data-filter="mujer">MUJER</button>
                     <button class="btn" data-filter="all">TODOS</button>
+                   
                 </div>
+                
+                <a class="boton-menu boton-carrito" href="./carrito.html">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    <span id="numerito" class="numerito">0</span> <!-- Contador de productos en el carrito -->
+                </a>
             </main>
+            <!-- Carrito de compras al final del aside -->
+           
             
             </div>
             
@@ -61,9 +74,33 @@
             </div>
         </div>
         <div class="card-container">
+            <div class="card" data-category="mujer hombre">
+                <div class="image-container">
+                    <img id="card-image-2-mujer" alt="Card Image Mujer" class="card-image">
+                    
+                    <!-- Botones para cambiar imágenes dentro del mismo color -->
+                    <button class="prev-image" onclick="changeCardImage('prev', 'card-image-2-mujer')" aria-label="Previous Image">
+                        <span class="material-symbols-outlined">arrow_back_ios</span>
+                    </button>
+                    <button class="next-image" onclick="changeCardImage('next', 'card-image-2-mujer')" aria-label="Next Image">
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </button>
+                </div>
+                
+                <!-- Botones para cambiar el color del zapato -->
+                <div class="color-buttons">
+                    <button class="color-btn-white" onclick="changeShoeColor(0, 'card-image-2-mujer')" aria-label="Black Color"></button>
+                    <button class="color-btn-blue" onclick="changeShoeColor(1, 'card-image-2-mujer')" aria-label="Blue Color"></button>
+                    <button class="color-btn-red" onclick="changeShoeColor(2, 'card-image-2-mujer')" aria-label="Red Color"></button>
+                </div>
+                
+                <p class="card-name">Air force 1 Unisex</p>
+                <p class="card-price">$450.000</p>
+            </div>
+            
             <div class="card" data-category="hombre">
                 <div class="image-container">
-                    <img id="card-image-1-hombre" alt="Card Image" class="card-image">
+                    <img id="card-image-1-hombre" alt="Card Image Hombre" class="card-image">
                     
                     <!-- Botones para cambiar imágenes dentro del mismo color -->
                     <button class="prev-image" onclick="changeCardImage('prev', 'card-image-1-hombre')" aria-label="Previous Image">
@@ -76,40 +113,49 @@
                 
                 <!-- Botones para cambiar el color del zapato -->
                 <div class="color-buttons">
-                    <button class="color-btn-black" onclick="changeShoeColor(0, 'card-image-1-hombre')" aria-label="Black Color"></button>
+                    
+                    <button class="color-btn-white-black" onclick="changeShoeColor(0, 'card-image-1-hombre')" aria-label="Black Color"></button>
                     <button class="color-btn-blue" onclick="changeShoeColor(1, 'card-image-1-hombre')" aria-label="Blue Color"></button>
                     <button class="color-btn-red" onclick="changeShoeColor(2, 'card-image-1-hombre')" aria-label="Red Color"></button>
                 </div>
                 
-                <p class="card-name">Dunk Low</p>
+                <p class="card-name">Dunk Low Hombre</p>
                 <p class="card-price">$550.000</p>
             </div>
             
-            <div class="card" data-category="mujer">
-                <div class="image-container">
-                    <img id="card-image-1-mujer" alt="Card Image" class="card-image">
-                    
-                    <!-- Botones para cambiar imágenes dentro del mismo color -->
-                    <button class="prev-image" onclick="changeCardImage('prev', 'card-image-1-mujer')" aria-label="Previous Image">
-                        <span class="material-symbols-outlined">arrow_back_ios</span>
-                    </button>
-                    <button class="next-image" onclick="changeCardImage('next', 'card-image-1-mujer')" aria-label="Next Image">
-                        <span class="material-symbols-outlined">arrow_forward_ios</span>
-                    </button>
-                </div>
-                
-                <!-- Botones para cambiar el color del zapato -->
-                <div class="color-buttons">
-                    <button class="color-btn-black" onclick="changeShoeColor(0, 'card-image-1-mujer')" aria-label="Black Color"></button>
-                    <button class="color-btn-blue" onclick="changeShoeColor(1, 'card-image-1-mujer')" aria-label="Blue Color"></button>
-                    <button class="color-btn-red" onclick="changeShoeColor(2, 'card-image-1-mujer')" aria-label="Red Color"></button>
-                </div>
-                
-                <p class="card-name">Dunk Low</p>
-                <p class="card-price">$550.000</p>
-            </div>
+            
             
             <div class="card" data-category="hombre">
+                <img src="" alt="Card Image" class="card-image">
+                <p class="card-name">Pantalón Hombre</p>
+                <p class="card-price">$25.00</p>
+            </div>
+            <div class="card" data-category="mujer">
+                <img src="" alt="Card Image" class="card-image">
+                <p class="card-name">Pantalón Hombre</p>
+                <p class="card-price">$25.00</p>
+            </div>
+            <div class="card" data-category="hombre">
+                <img src="" alt="Card Image" class="card-image">
+                <p class="card-name">Pantalón Hombre</p>
+                <p class="card-price">$25.00</p>
+            </div>
+            <div class="card" data-category="mujer">
+                <img src="" alt="Card Image" class="card-image">
+                <p class="card-name">Pantalón Hombre</p>
+                <p class="card-price">$25.00</p>
+            </div>
+            <div class="card" data-category="hombre">
+                <img src="" alt="Card Image" class="card-image">
+                <p class="card-name">Pantalón Hombre</p>
+                <p class="card-price">$25.00</p>
+            </div>
+            <div class="card" data-category="hombre">
+                <img src="" alt="Card Image" class="card-image">
+                <p class="card-name">Pantalón Hombre</p>
+                <p class="card-price">$25.00</p>
+            </div>
+            <div class="card" data-category="mujer">
                 <img src="" alt="Card Image" class="card-image">
                 <p class="card-name">Pantalón Hombre</p>
                 <p class="card-price">$25.00</p>
@@ -120,7 +166,7 @@
                 <p class="card-price">$25.00</p>
             </div>
 
-            <!-- Cookies 
+            <!-- Cookies -->
            <div class="wrap">
             <header class="h">
                 <span class="material-symbols-outlined">
@@ -129,19 +175,84 @@
                 <h2>Cookies Consent</h2>
             </header>
             <div class="data">
-                <p>We use third-party cookies to improve your experience and offer you personalized ads. By continuing to browse, you agree to the use of cookies. 
+                <p>
+                    This website uses cookies to help you have a superior and more relevant browsing experience on the website. 
+                    <a href="#" class="accessible-link">Read more..</a>
+                </p>
+                
             </div>
             <div class="butt">
-                <button class="cookie-btn accept">Accept</button>
+                <button class="cookie-btn accept" id="acceptBtn">Accept</button>
                 <button class="cookie-btn decline">Decline</button>
             </div>
-           </div>-->
+           </div>
         </div>
+        
+        <footer>
+            <p class="texto-footer">© 2024 ClotingStore. Some rights reserved.</p>
+        
+            <div class="footer-row">
+                <!-- Payment Methods -->
+                <div class="payment-methods">
+                    <h4>Payment Methods <span class="material-symbols-outlined">paid</span></h4>
+                    <div class="info">
+                        <span>PayPal</span>
+                        <span>Nequi</span>
+                        <span>Bancolombia</span>
+                        <span>Visa</span>
+                        <span>Mastercard</span>
+                        <span>Sistecrédito</span>
+                    </div>
+                </div>
+        
+                <!-- Support Channel -->
+                <div class="support-channel">
+                    <h4>Support Channel <span class="material-symbols-outlined">
+                        support_agent
+                        </span></h4>
+                    <div class="info">
+                        <span>Call us: +57 320 950 4702</span>
+                        <span>Hours: Monday to Friday, 7am - 6pm</span>
+                    </div>
+                </div>
+        
+                <!-- Social Links -->
+                <div class="social-links">
+                    <h4>Follow Us <span class="material-symbols-outlined">group</span>
+                    </h4>
+                    <div class="info">
+                        <a href="https://facebook.com" target="_blank"> <i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Location -->
+            <div class="location-info">
+                <h4>Location <span class="material-symbols-outlined">language</span></h4>
+                
+                <div class="info">
+                    <span>Colombia</span>
+                </div>
+            </div>
+        
+            <!-- Terms and Conditions & Privacy Policy -->
+            <div class="legal-info">
+                <a href="/terms" target="_blank">Terms and Conditions</a>
+                <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+            </div>
+        </footer>
+        
+        
+        
+        
         
         
     </div>
     
-    <script src="./js/menu.js"></script>
+    <script src="./js/menu.js" defer></script>
+    <script src="image.js" defer></script>
  
 </body>
 </html>
