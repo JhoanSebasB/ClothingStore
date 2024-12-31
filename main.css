@@ -15,6 +15,8 @@
     font-family: 'Rubik', sans-serif;
 }
 
+
+
 .frase {
     background-color: #000000;
     color: #fff;
@@ -41,10 +43,11 @@ aside {
     top: 0;
     display: flex;
     flex-direction: column;
-   
+    background-color: white;
+    z-index: 10;
 }
 
-.menu {
+/*.menu {
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -101,9 +104,9 @@ aside {
     transform: rotateZ(90deg);
 }
 
-.boton-carrito {
-    margin-top: 2rem;
-}
+
+
+
 
 .numerito {
     background-color: var(--clr-white);
@@ -115,13 +118,30 @@ aside {
 .boton-carrito.active .numerito {
     background-color: var(--clr-main);
     color: var(--clr-white);
+}*/
+
+.boton-carrito {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    gap: 0.5rem;
+    margin-left: -2.5rem;
+    margin-top: 50px;
+    
 }
 
-.texto-footer {
-    color: var(--clr-main-light);
-    font-size: .85rem;
+.numerito {
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 0.9rem;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    font-weight: bold;
 }
 
+  
 .titulo-principal {
     color: var(--clr-main);
     margin-bottom: 2rem;
@@ -180,16 +200,18 @@ aside {
 }
 
 .logo-link {
-    text-decoration: none;
+    
     color: #000000;
-    background-color: #00aae4;
+    
 }
 
 .logo {
-    font-weight: bold;
-   
+    width: 50px;  
+    height: 40px;  
+    margin-left: 10px;
     
-}
+  }
+  
 
 .btn {
     font-family: inherit;
@@ -198,7 +220,7 @@ aside {
     position: relative;
     overflow: hidden;
     transition: color 0.5s, text-decoration 0.5s;
-    font-size: 17px;
+    font-size: 15px;
     border-radius: 6px;
     font-weight: 500;
     color: #0000008b;
@@ -228,7 +250,7 @@ aside {
 }
 
 .carousel {
-    position: relative;
+    position: absolute ;
     width: 100%;
     height: 50px;
     overflow: hidden;
@@ -237,10 +259,11 @@ aside {
     justify-content: center;
     align-items: center;
     background-color: #f5f5f5;
+    transform: translateY(100px);
 }
 
 .carousel-wrapper {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
     display: flex;
@@ -253,7 +276,7 @@ aside {
 .carousel-text {
     position: absolute;
     white-space: nowrap;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #333;
     animation: slide 5s infinite;
 }
@@ -288,16 +311,14 @@ aside {
 .card {
     width: 400px;
     height: 450px;
-    border: 1px solid #ccc;
+    background-color: #ededed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f9f9f9;
     padding: 10px;
     transition: transform 0.3s ease;
     margin: 1rem;
-    background-color: #fff;
     margin-top: 50px;
 }
 
@@ -361,8 +382,13 @@ aside {
  right: 0px;
 }
 
-.color-btn-black{
-    background-color: #000000;
+
+.color-btn-white{
+    background-color: #fff;
+}
+
+.color-btn-white-black{
+    background: linear-gradient(135deg, #ffffff 50%, #000000 50%)
 }
 .color-btn-blue{
     background-color: #409fff;
@@ -377,10 +403,12 @@ aside {
     display: block; 
   }
 
+  /* Cookies */
+
 .wrap{
     position: fixed;
     bottom: 50px;
-    right: 20px;
+    right: -370px;
     max-width: 345px;
     width: 100%;
     background-color: #ffffff;
@@ -388,7 +416,16 @@ aside {
     border-radius: 8px;
     padding:  15px 25px 22px;
     border: 1px solid #333;
+    transition: right 0.3s ease;
+}
 
+.wrap.show{
+    right: 20px;
+}
+
+.h span{
+    color: brown;
+    font-size: 32px;
 }
 
 .wrap .h{
@@ -397,16 +434,46 @@ aside {
     column-gap: 15px;
 }
 
+.wrap .data{
+    margin-top: 16px;
+}
 
-  .cookie-btn {
+.data p a{
+    text-decoration: none;
+}
+
+.data p a:hover{
+    text-decoration: underline;
+}
+
+.wrap .butt{
+    margin-top: 16px;
+    width: 100%;
    
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.accessible-link {
+    color: #1a73e8;
+    text-decoration: underline; 
+}
+
+
+.accessible-link:hover {
+    color: #0056b3;
+    text-decoration: none; 
+}
+
+
+.cookie-btn {
+   
+padding: 10px 20px;
+margin: 5px;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s ease, color 0.3s ease;
+border: 1px solid #333;
 }
 
 .cookie-btn.accept {
@@ -420,11 +487,108 @@ aside {
 }
 
 .cookie-btn.decline:hover {
-    background-color: red;
+    background-color: rgb(255, 45, 45);
     color: black;
 }
 
 .cookie-btn:hover {
+    background-color: #333333;
+    color: #fff;
+}
+
+
+/* Footer General */
+
+
+footer {
+    text-align: center;
+    padding: 20px;
     background-color: #333;
     color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    position: relative;
+}
+
+.texto-footer {
+    margin-bottom: 15px;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    gap: 20px;
+}
+
+.payment-methods,
+.support-channel,
+.social-links,
+.location-info {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+}
+
+footer h4 {
+    font-size: 16px;
+    font-weight: bold;
+    
+    margin: 0;
+}
+
+footer .info {
+    display: flex;  
+    justify-content: space-around;  
+    margin-top: 5px;
+    opacity: 0; 
+    visibility: hidden;  
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;  
+}
+
+
+footer:hover .info {
+    opacity: 1;
+    visibility: visible;  
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0s;  
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    margin: 3px 0;
+}
+
+footer a:hover {
+    color: #f0a500;
+}
+
+
+footer .legal-info {
+    margin-top: 15px;
+    text-align: center;
+}
+
+footer .legal-info a {
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+footer span.material-symbols-outlined {
+    font-size: 18px;
+    vertical-align: text-top;
+}
+.social-links .info i {
+    font-size: 1rem; 
+    margin: 0 10px; 
+    color: #fff; 
+    transition: transform 0.2s ease; 
+}
+
+.social-links .info i:hover {
+    transform: scale(1.2); 
+    color: #0077ff; 
 }
