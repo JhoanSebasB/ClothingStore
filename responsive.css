@@ -84,6 +84,7 @@
 
 @media screen and (max-width: 600px) {
 
+
     .frase{
         background-color: #000000;
         color: #fff;
@@ -116,15 +117,14 @@
     font-size: 14px;
    }
 
-   .hambur{
-    margin-top: 24px;
+   .logo-responsive{
+    margin-top: 18px;
    }
 
-   
-
-
+   .header-mobile {
+    margin-top: -12px;
+    }
 }
-
 /* Responsive pc */
 @media (min-width: 600px) {
     .boton {
@@ -148,6 +148,22 @@
         padding: .5rem .5rem .5rem 30px;
 
     }
+    
+    .boton-carrito{
+    margin-right: 9%;
+    position: absolute;
+    margin-left: 90%;
+    margin-top: 7px;
+    }
+    
+
+
+
+
+
+  
+    
+    
     
 }
 
