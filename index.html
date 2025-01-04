@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link data-react-helmet="true" rel="icon" href="https://nikeco.vteximg.com.br/arquivos/favicon.ico"/><link data-react-helmet="true" rel="canonical" href="https://www.nike.com.co/nike-air-force-1-07-cw2288-001-th4/p"/><link data-react-helmet="true" rel="preload" as="image" href="https://nikeco.vtexassets.com/arquivos/ids/196157-800-auto?v=638343769334600000&amp;width=800&amp;height=auto&amp;aspect=true" crossOrigin="anonymous"/>
+    <link data-react-helmet="true" rel="icon" href="https://nikeco.vteximg.com.br/arquivos/favicon.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClotingStore</title>
     <meta name="description" content="Discover the latest fashion trends for men and women at MegaShop. From stylish sneakers to elegant dresses, find your perfect look today!">
@@ -18,6 +18,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css">
 
+
     
     <!-- swiper/slider -->
    
@@ -26,25 +27,25 @@
 <body>
     
     <div class="wrapper">
-        <div class="frase" >Ten la libertad de usar lo que te haga sentir UNICO</div>
+        <div id="frase" class="frase" >Ten la libertad de usar lo que te haga sentir UNICO</div>
         <header class="header-mobile">
-            <img src="https://nikeco.vtexassets.com/assets/vtex/assets-builder/nikeco.nikeco-nike/2.0.33/nike/img/nike-logo___371bc7e687739441af9a7d0a95668bc4.svg" alt="logo" class="logo" >
-            <span class="fi fi-us"></span> 
-            <span class="fi fi-es"></span>
+            <img src="https://nikeco.vtexassets.com/assets/vtex/assets-builder/nikeco.nikeco-nike/2.0.33/nike/img/nike-logo___371bc7e687739441af9a7d0a95668bc4.svg" alt="logo" class="logo">
+           
             <button class="open-menu" id="open-menu">
-                <span class="material-symbols-outlined">
-                    menu
-                    </span>
+                <span class="material-symbols-outlined">menu</span>
             </button>
         </header>
+        
         <aside>
             <button class="close-menu" id="close-menu">
                 <span class="material-symbols-outlined">
                     close
                     </span>
+                    
             </button>
             <div class="as">
             <header class="logo-responsive">
+                
                 <a href="index.html" class="logo-link">
                     <img src="https://nikeco.vtexassets.com/assets/vtex/assets-builder/nikeco.nikeco-nike/2.0.33/nike/img/nike-logo___371bc7e687739441af9a7d0a95668bc4.svg" alt="logo" class="logo" >
                 </a>
@@ -53,18 +54,41 @@
             <main class="boton">
                 <!-- Contenedor de botones para filtrar productos -->
                 <div id="contenedor-productos" class="contenedor-productos">
-                    <button class="btn" data-filter="hombre">HOMBRE</button>
-                    <button class="btn" data-filter="mujer">MUJER</button>
-                    <button class="btn" data-filter="all">TODOS</button>
+                    <button id="opcionH" class="btn" data-filter="hombre">HOMBRE</button>
+                    <button id="opcionM" class="btn" data-filter="mujer">MUJER</button>
+                    <button id="opcionA" class="btn" data-filter="all">TODOS</button>
                    
                 </div>
-                
-                <a class="boton-menu boton-carrito" href="./carrito.html">
+                <div class="language-icons">
+                    <button class="ingles" id="btn-en" aria-label="Cambiar idioma a inglés">
+                        <span class="fi fi-us"></span>
+                    </button>
+                    <button class="espanol" id="btn-es" aria-label="Cambiar idioma a español">
+                        <span class="fi fi-es"></span>
+                    </button>
+                </div>
+                <a class="boton-menu boton-carrito" id="carrito-btn">
                     <span class="material-symbols-outlined">shopping_cart</span>
-                    <span id="numerito" class="numerito">0</span> <!-- Contador de productos en el carrito -->
+                    <span id="numerito" class="numerito">0</span>
                 </a>
+                
+                <!-- Pared del carrito -->
+                <div id="pared-carrito" class="pared">
+                    <div class="contenido-carrito">
+                        <h2>
+                            Carrito
+                            <button id="cerrar-carrito">
+                                <span class="material-symbols-outlined">close</span>
+                            </button>
+                        </h2>
+                        <!-- Aquí puedes agregar los productos del carrito -->
+                        <p>Producto 1</p>
+                        <p>Producto 2</p>
+                    </div>
+                </div>
+                
             </main>
-            <!-- Carrito de compras al final del aside -->
+          
            
             
             </div>
@@ -76,62 +100,123 @@
             </div>
         </div>
         <div class="card-container">
-            <div class="card" data-category="mujer hombre">
-                <div class="image-container">
-                    <img id="card-image-2-mujer" alt="Card Image Mujer" class="card-image">
-                    
-                    <!-- Botones para cambiar imágenes dentro del mismo color -->
-                    <button class="prev-image" onclick="changeCardImage('prev', 'card-image-2-mujer')" aria-label="Previous Image">
-                        <span class="material-symbols-outlined">arrow_back_ios</span>
-                    </button>
-                    <button class="next-image" onclick="changeCardImage('next', 'card-image-2-mujer')" aria-label="Next Image">
-                        <span class="material-symbols-outlined">arrow_forward_ios</span>
-                    </button>
-                </div>
-                
-                <!-- Botones para cambiar el color del zapato -->
-                <div class="color-buttons">
-                    <button class="color-btn-white" onclick="changeShoeColor(0, 'card-image-2-mujer')" aria-label="Black Color"></button>
-                    <button class="color-btn-blue" onclick="changeShoeColor(1, 'card-image-2-mujer')" aria-label="Blue Color"></button>
-                    <button class="color-btn-red" onclick="changeShoeColor(2, 'card-image-2-mujer')" aria-label="Red Color"></button>
-                </div>
-                
-                <p class="card-name">Air force 1 Unisex</p>
-                <p class="card-price">$450.000</p>
-            </div>
+           
+            <!-- Primera Card (Mujer) -->
+<div class="card" data-category="mujer hombre">
+    <div class="image-container">
+        
+            <img id="card-image-2-mujer" alt="Card Image Mujer" class="card-image">
             
-            <div class="card" data-category="hombre">
-                <div class="image-container">
-                    <img id="card-image-1-hombre" alt="Card Image Hombre" class="card-image">
-                    
-                    <!-- Botones para cambiar imágenes dentro del mismo color -->
-                    <button class="prev-image" onclick="changeCardImage('prev', 'card-image-1-hombre')" aria-label="Previous Image">
-                        <span class="material-symbols-outlined">arrow_back_ios</span>
-                    </button>
-                    <button class="next-image" onclick="changeCardImage('next', 'card-image-1-hombre')" aria-label="Next Image">
-                        <span class="material-symbols-outlined">arrow_forward_ios</span>
-                    </button>
-                </div>
-                
-                <!-- Botones para cambiar el color del zapato -->
-                <div class="color-buttons">
-                    
-                    <button class="color-btn-white-black" onclick="changeShoeColor(0, 'card-image-1-hombre')" aria-label="Black Color"></button>
-                    <button class="color-btn-blue" onclick="changeShoeColor(1, 'card-image-1-hombre')" aria-label="Blue Color"></button>
-                    <button class="color-btn-red" onclick="changeShoeColor(2, 'card-image-1-hombre')" aria-label="Red Color"></button>
-                </div>
-                
-                <p class="card-name">Dunk Low Hombre</p>
-                <p class="card-price">$550.000</p>
-            </div>
+          
+        <button class="prev-image" onclick="changeCardImage('prev', 'card-image-2-mujer'); event.stopPropagation(); return false;" aria-label="Previous Image">
+            <span class="material-symbols-outlined">arrow_back_ios</span>
+        </button>
+        <button class="next-image" onclick="changeCardImage('next', 'card-image-2-mujer'); event.stopPropagation(); return false;" aria-label="Next Image">
+            <span class="material-symbols-outlined">arrow_forward_ios</span>
+        </button>
+    </div>
+    <p class="card-name" id="card-name">Air force 1 <span data-translation="hombre">Hombre</span></p>
+    <!-- Botones para seleccionar el tamaño del zapato -->
+    <div class="size-buttons">
+        <p data-translation="size">Size: </p>
+        <button class="size-btn" onclick="selectSize('38', 'Air force 1 Unisex', '$450.000', 'card-image-2-mujer')" aria-label="Size 38">38</button>
+        <button class="size-btn" onclick="selectSize('39', 'Air force 1 Unisex', '$450.000', 'card-image-2-mujer')" aria-label="Size 39">39</button>
+        <button class="size-btn" onclick="selectSize('40', 'Air force 1 Unisex', '$450.000', 'card-image-2-mujer')" aria-label="Size 40">40</button>
+        <button class="size-btn" onclick="selectSize('41', 'Air force 1 Unisex', '$450.000', 'card-image-2-mujer')" aria-label="Size 41">41</button>
+    </div>
+
+    <!-- Botones para cambiar el color del zapato -->
+    <div class="color-buttons">
+        <p>Color: </p>
+        <button class="color-btn-white" onclick="selectColor('White', 'Air force 1 Unisex', '$450.000', 'card-image-2-mujer'); changeShoeColor(0, 'card-image-2-mujer')" aria-label="White Color"></button>
+        <button class="color-btn-black" style="background-color: #000;" onclick="selectColor('Black', 'Air force 1 Unisex', '$450.000', 'card-image-2-mujer'); changeShoeColor(1, 'card-image-2-mujer')" aria-label="Black Color"></button>
+        </div>
+    <div class="price-buy">
+    <p class="card-price" id="card-price">$450.000</p>
+    <!-- Botón para guardar la información -->
+    <button class="buy" id="save-button-1" onmouseover="showMessage(1)" onmouseout="hideMessage(1)"  onclick="saveShoeDetails('card-image-2-mujer')" disabled>Buy Now<p id="shoe-details-1" class="hidden-message"></p></button>
+   
+    </div>
+</div>
+
+<!-- Segunda Card (Hombre) -->
+<div class="card" data-category="hombre">
+    <div class="image-container">
+        <div class="tile" data-scale="3" > 
+            <img id="card-image-1-hombre" alt="Card Image Hombre" class="card-image xzoom">
+
+    </div>
+        <button class="prev-image" onclick="changeCardImage('prev', 'card-image-1-hombre'); event.stopPropagation(); return false;" aria-label="Previous Image">
+            <span class="material-symbols-outlined">arrow_back_ios</span>
+        </button>
+        <button class="next-image" onclick="changeCardImage('next', 'card-image-1-hombre'); event.stopPropagation(); return false;" aria-label="Next Image">
+            <span class="material-symbols-outlined">arrow_forward_ios</span>
+        </button>
+    </div>
+    <p class="card-name" id="card-name">Dunk Low <span data-translation="hombre">Hombre</span> </p>
+    <!-- Botones para seleccionar el tamaño del zapato -->
+    <div class="size-buttons">
+        <p data-translation="size">Size: </p>
+        <button class="size-btn" onclick="selectSize('38', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre')" aria-label="Size 38">38</button>
+        <button class="size-btn" onclick="selectSize('39', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre')" aria-label="Size 39">39</button>
+        <button class="size-btn" onclick="selectSize('40', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre')" aria-label="Size 40">40</button>
+        <button class="size-btn" onclick="selectSize('41', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre')" aria-label="Size 41">41</button>
+    </div>
+
+    <!-- Botones para cambiar el color del zapato -->
+    <div class="color-buttons">
+        <p>Color: </p>
+        <button class="color-btn-white-black" onclick="selectColor('Black', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre'); changeShoeColor(0, 'card-image-1-hombre')" aria-label="Black Color"></button>
+        <button class="color-btn-white-blue" onclick="selectColor('Blue', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre'); changeShoeColor(1, 'card-image-1-hombre')" aria-label="Blue Color"></button>
+        <button class="color-btn-white-red" onclick="selectColor('Red', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre'); changeShoeColor(2, 'card-image-1-hombre')" aria-label="Red Color"></button>
+        <button class="color-btn-white-purple" onclick="selectColor('Purple', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre'); changeShoeColor(3, 'card-image-1-hombre')" aria-label="Purple Color"></button>
+    </div>
+<div class="price-buy">
+    <p class="card-price">$550.000</p>
+    <!-- Botón para guardar la información -->
+    <button class="buy" id="save-button-2" onmouseover="showMessage(2)" onmouseout="hideMessage(2)" onclick="saveShoeDetails('card-image-1-hombre'); sendToWhatsApp()" disabled>Buy Now<p id="shoe-details-2" class="hidden-message"></p></button>
+
+
+</div>
+</div>
             
-            
-            
-            <div class="card" data-category="hombre">
-                <img src="" alt="Card Image" class="card-image">
-                <p class="card-name">Pantalón Hombre</p>
-                <p class="card-price">$25.00</p>
-            </div>
+              
+             <!-- Tercera Card (Mujer) -->
+<div class="card" data-category="mujer">
+    <div class="image-container">
+        <div class="tile" data-scale="3" >
+            <img id="card-image-3-nike" alt="Card Image Mujer" class="card-image">
+          </div>
+        <button class="prev-image" onclick="changeCardImage('prev', 'card-image-3-nike'); event.stopPropagation(); return false;" aria-label="Previous Image">
+            <span class="material-symbols-outlined">arrow_back_ios</span>
+        </button>
+        <button class="next-image" onclick="changeCardImage('next', 'card-image-3-nike'); event.stopPropagation(); return false;" aria-label="Next Image">
+            <span class="material-symbols-outlined">arrow_forward_ios</span>
+        </button>
+    </div>
+    <p class="card-name" id="card-name">Nike Free Metcon 6 <span data-translation="mujer">Mujer</span></p>
+    <!-- Botones para seleccionar el tamaño del zapato -->
+    <div class="size-buttons">
+        <p data-translation="size">Size: </p>
+        <button class="size-btn" onclick="selectSize('38', 'Nike Free Metcon 6 Mujer', '$410.000', 'card-image-3-nike')" aria-label="Size 38">38</button>
+        <button class="size-btn" onclick="selectSize('39', 'Nike Free Metcon 6 Mujer', '$410.000', 'card-image-3-nike')" aria-label="Size 39">39</button>
+        <button class="size-btn" onclick="selectSize('40', 'Nike Free Metcon 6 Mujer', '$410.000', 'card-image-3-nike')" aria-label="Size 40">40</button>
+        <button class="size-btn" onclick="selectSize('41', 'Nike Free Metcon 6 Mujer', '$410.000', 'card-image-3-nike')" aria-label="Size 41">41</button>
+    </div>
+
+    <!-- Botones para cambiar el color del zapato -->
+    <div class="color-buttons">
+        <p>Color: </p>
+        <button class="color-btn-white" onclick="selectColor('White', 'Nike Free Metcon 6 Mujer', '$410.000', 'card-image-3-nike'); changeShoeColor(0, 'card-image-3-nike')" aria-label="White Color"></button>
+        <button class="color-btn-black" onclick="selectColor('Black', 'Nike Free Metcon 6 Mujer', '$410.000', 'card-image-3-nike'); changeShoeColor(1, 'card-image-3-nike')" aria-label="Black Color"></button>
+        </div>
+    <div class="price-buy">
+    <p class="card-price" id="card-price">$410.000</p>
+    <!-- Botón para guardar la información -->
+    <button class="buy" id="save-button-3" onmouseover="showMessage(3)" onmouseout="hideMessage(3)"  onclick="saveShoeDetails('card-image-3-mujer')" disabled>Buy Now<p id="shoe-details-3" class="hidden-message"></p></button>
+   
+    </div>
+</div>
             <div class="card" data-category="mujer">
                 <img src="" alt="Card Image" class="card-image">
                 <p class="card-name">Pantalón Hombre</p>
@@ -191,12 +276,15 @@
         </div>
         
         <footer>
-            <p class="texto-footer">© 2024 ClotingStore. Some rights reserved.</p>
+            <p  class="texto-footer">© 2024 ClotingStore.</p>
         
             <div class="footer-row">
                 <!-- Payment Methods -->
                 <div class="payment-methods">
-                    <h4>Payment Methods <span class="material-symbols-outlined">paid</span></h4>
+                    <div class="payment-header">
+                        <h3 id="Payment">Payment Methods</h3>
+                        <span class="material-symbols-outlined">paid</span>
+                    </div>
                     <div class="info">
                         <span>PayPal</span>
                         <span>Nequi</span>
@@ -206,33 +294,48 @@
                         <span>Sistecrédito</span>
                     </div>
                 </div>
+                
         
                 <!-- Support Channel -->
                 <div class="support-channel">
-                    <h4>Support Channel <span class="material-symbols-outlined">
-                        support_agent
-                        </span></h4>
+                    <div class="support-header"> 
+                        <h4 id="Support">Support Channel</h4>
+                        <span class="material-symbols-outlined">support_agent</span>
+                    </div>
                     <div class="info">
                         <span>Call us: +57 320 950 4702</span>
                         <span>Hours: Monday to Friday, 7am - 6pm</span>
                     </div>
                 </div>
+                
         
                 <!-- Social Links -->
                 <div class="social-links">
-                    <h4>Follow Us <span class="material-symbols-outlined">group</span>
-                    </h4>
-                    <div class="info">
-                        <a href="https://facebook.com" target="_blank"> <i class="fab fa-facebook-f"></i></a>
-                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <div class="follow-header">
+                        <h4 id="Follow">Follow Us </h4>
+                        <span class="material-symbols-outlined">group</span>
                     </div>
+                    <div class="info">
+                        <a href="https://facebook.com" target="_blank" aria-label="Visit our Facebook page">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Visit our Twitter page">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Visit our Instagram page">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    
                 </div>
             </div>
         
             <!-- Location -->
             <div class="location-info">
-                <h4>Location <span class="material-symbols-outlined">language</span></h4>
+                <div class="location-header">
+                    <h4 id="Location">Location </h4>
+                    <span class="material-symbols-outlined">language</span>
+                 </div>
                 
                 <div class="info">
                     <span>Colombia</span>
@@ -241,8 +344,8 @@
         
             <!-- Terms and Conditions & Privacy Policy -->
             <div class="legal-info">
-                <a href="/terms" target="_blank">Terms and Conditions</a>
-                <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+                <a id="terminos" href="/terms" target="_blank">Terms and Conditions</a>
+                <a id="politica" href="/privacy-policy" target="_blank">Privacy Policy</a>
             </div>
         </footer>
         
@@ -255,6 +358,165 @@
     
     <script src="./js/menu.js" defer></script>
     <script src="image.js" defer></script>
- 
+    <script src="languaje.js" defer></script>
+    <script>
+
+// Función para mostrar el mensaje cuando el cursor está encima del botón
+function showMessage(cardId) {
+    let message = '';
+    let selectedSize, selectedColor, messageElement;
+
+    // Asignar las variables correspondientes según el cardId
+    if (cardId === 1) {
+        selectedSize = selectedSize1;
+        selectedColor = selectedColor1;
+        messageElement = document.getElementById('shoe-details-1');
+    } else if (cardId === 2) {
+        selectedSize = selectedSize2;
+        selectedColor = selectedColor2;
+        messageElement = document.getElementById('shoe-details-2');
+    } else if (cardId === 3) {
+        selectedSize = selectedSize3;
+        selectedColor = selectedColor3;
+        messageElement = document.getElementById('shoe-details-3');
+    }
+
+    // Verificar si no se ha seleccionado talla o color
+    if (!selectedSize || !selectedColor) {
+        message = 'Por favor, selecciona la talla y el color antes de comprar.';
+    }
+
+    // Mostrar u ocultar el mensaje
+    if (message) {
+        messageElement.textContent = message;
+        messageElement.style.display = 'block';
+        messageElement.style.position = 'absolute';
+        messageElement.style.color = '#fff';
+        messageElement.style.backgroundColor = '#00aae4';
+        messageElement.style.padding = '10px';
+        messageElement.style.borderRadius = '5px';
+        messageElement.style.zIndex = '10';
+
+        const button = document.getElementById(`save-button-${cardId}`);
+        const buttonRect = button.getBoundingClientRect();
+
+        messageElement.style.top = `${buttonRect.top - 40}px`;
+        messageElement.style.left = `${buttonRect.left}px`;
+    } else {
+        messageElement.style.display = 'none';
+    }
+}
+
+function hideMessage(cardId) {
+    const messageElement = document.getElementById(`shoe-details-${cardId}`);
+    messageElement.style.display = 'none'; // Ocultar el mensaje
+}
+
+
+
+
+
+
+
+
+        let selectedSize1 = null;
+        let selectedColor1 = null;
+        let selectedShoeName1 = '';
+        let selectedShoePrice1 = '';
+        
+        let selectedSize2 = null;
+        let selectedColor2 = null;
+        let selectedShoeName2 = '';
+        let selectedShoePrice2 = '';
+
+        let selectedSize3 = null;
+        let selectedColor3 = null;
+        let selectedShoeName3 = '';
+        let selectedShoePrice3 = '';
+    
+       
+        function selectSize(size, name, price, cardId) {
+            if (cardId === 'card-image-2-mujer') {
+                selectedSize1 = size;
+                selectedShoeName1 = name;
+                selectedShoePrice1 = price;
+                checkSelection(1);
+            } else if (cardId === 'card-image-1-hombre') {
+                selectedSize2 = size;
+                selectedShoeName2 = name;
+                selectedShoePrice2 = price;
+                checkSelection(2);
+            } else if (cardId === 'card-image-3-mujer') {
+                selectedSize3 = size;
+                selectedShoeName3 = name;
+                selectedShoePrice3 = price;
+                checkSelection(3);
+            }
+        }
+    
+    
+        function selectColor(color, name, price, cardId) {
+            if (cardId === 'card-image-2-mujer') {
+                selectedColor1 = color;
+                selectedShoeName1 = name;
+                selectedShoePrice1 = price;
+                checkSelection(1);
+            } else if (cardId === 'card-image-1-hombre') {
+                selectedColor2 = color;
+                selectedShoeName2 = name;
+                selectedShoePrice2 = price;
+                checkSelection(2);
+            } else if (cardId === 'card-image-3-mujer') {
+                selectedColor2 = color;
+                selectedShoeName2 = name;
+                selectedShoePrice2 = price;
+                checkSelection(2);
+            }
+        }
+    
+        
+        function checkSelection(cardId) {
+            if (cardId === 1) {
+                if (selectedSize1 && selectedColor1) {
+                    document.getElementById('save-button-1').disabled = false;
+                    document.getElementById('shoe-details-1').textContent = '';
+                } else {
+                    document.getElementById('save-button-1').disabled = true;
+                    document.getElementById('shoe-details-1').textContent = '';
+                }
+            } else {
+                if (selectedSize2 && selectedColor2) {
+                    document.getElementById('save-button-2').disabled = false;
+                    document.getElementById('shoe-details-2').textContent = '';
+                } else {
+                    document.getElementById('save-button-2').disabled = true;
+                    document.getElementById('shoe-details-2').textContent = '';
+                }
+            }
+        }
+    
+        // Función para guardar la información y mostrarla
+        function saveShoeDetails(cardId) {
+    let shoeData;
+    if (cardId === 'card-image-2-mujer') {
+        shoeData = {
+            size: selectedSize1,
+            color: selectedColor1,
+            name: selectedShoeName1,
+            price: selectedShoePrice1
+        };
+    } else {
+        shoeData = {
+            size: selectedSize2,
+            color: selectedColor2,
+            name: selectedShoeName2,
+            price: selectedShoePrice2
+        };
+    }
+    console.log('Shoe Details Saved:', shoeData);
+}
+
+    </script>
+    
 </body>
 </html>
