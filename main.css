@@ -15,6 +15,12 @@
     font-family: 'Rubik', sans-serif;
 }
 
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
 
 
 .frase {
@@ -47,78 +53,28 @@ aside {
     z-index: 10;
 }
 
-/*.menu {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}
 
-.boton-menu {
-    background-color: transparent;
-    border: 0;
-    color: var(--clr-white);
+
+.language-icons button {
+    font-size: 20px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-weight: 600;
-    padding: 1rem;
-    font-size: .85rem;
-    width: 100%;
-}
-
-.boton-menu.active {
-    background-color: var(--clr-white);
-    color: var(--clr-main);
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-    position: relative;
-}
-
-.boton-menu.active::before {
-    content: '';
-    position: absolute;
-    width: 1rem;
-    height: 2rem;
-    bottom: 100%;
-    right: 0;
-    background-color: transparent;
-    border-bottom-right-radius: .5rem;
-    box-shadow: 0 1rem 0 var(--clr-white);
-}
-
-.boton-menu.active::after {
-    content: '';
-    position: absolute;
-    width: 1rem;
-    height: 2rem;
-    top: 100%;
-    right: 0;
-    background-color: transparent;
-    border-top-right-radius: .5rem;
-    box-shadow: 0 -1rem 0 var(--clr-white);
-}
-
-.boton-menu > i.bi-hand-index-thumb-fill,
-.boton-menu > i.bi-hand-index-thumb {
-    transform: rotateZ(90deg);
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
 }
 
 
-
-
-
-.numerito {
-    background-color: var(--clr-white);
-    color: var(--clr-main);
-    padding: .15rem .25rem;
-    border-radius: .25rem;
+.language-icons button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+    
 }
 
-.boton-carrito.active .numerito {
-    background-color: var(--clr-main);
-    color: var(--clr-white);
-}*/
+/* Carrito */
 
 .boton-carrito {
     display: flex;
@@ -126,7 +82,7 @@ aside {
     text-decoration: none;
     color: #333;
     font-size: 1.2rem;
-    gap: 0.5rem;
+    gap: .5rem;
     margin-left: -2.5rem;
     margin-top: 50px;
     
@@ -140,6 +96,56 @@ aside {
     padding: 0.2rem 0.5rem;
     font-weight: bold;
 }
+
+
+.pared {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0; /* Inicialmente invisible */
+    z-index: 1000;
+}
+
+
+.contenido-carrito {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.contenido-carrito h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+
+#cerrar-carrito {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#cerrar-carrito .material-symbols-outlined {
+    font-size: 2rem;
+    color: #333;
+}
+
+
+.pared.abierta {
+    right: 0; 
+    opacity: 1; 
+}
+
+
+
 
   
 .titulo-principal {
@@ -210,6 +216,7 @@ aside {
     height: 40px;  
     margin-left: 10px;
     
+    
   }
   
 
@@ -249,6 +256,8 @@ aside {
     width: 100%;
 }
 
+                                    /* Carousel */
+
 .carousel {
     position: absolute ;
     width: 100%;
@@ -270,6 +279,7 @@ aside {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+   
     
 }
 
@@ -277,7 +287,7 @@ aside {
     position: absolute;
     white-space: nowrap;
     font-size: 1rem;
-    color: #333;
+    color: #000;
     animation: slide 5s infinite;
 }
 
@@ -300,18 +310,24 @@ aside {
     }
 }
 
+                         /* Las cards */
+
 .card-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;
+    background-color: #fff;
 }
+
+
+
 
 .card {
     width: 400px;
-    height: 450px;
-    background-color: #ededed;
+    height: 490px;
+    background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -320,33 +336,97 @@ aside {
     transition: transform 0.3s ease;
     margin: 1rem;
     margin-top: 50px;
+    
 }
 
 
 .card.hidden {
-    display: none; /* Oculta completamente las tarjetas */
+    display: none; 
 }
 
 .card img {
     width: 400px;
-    height: auto;
+    
+    
     
 }
+
+.size-buttons, .color-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px;
+    
+}
+
+
+
+
+.size-buttons button,
+.color-buttons button {
+    background-color: #ffffff;
+    color: #000;
+    padding: 10px;
+    border: 0;
+    cursor: pointer;
+    margin: 1px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s, transform 0.1s;
+}
+
+.size-buttons button:active,
+.color-buttons button:active {
+    background-color: #000;
+    color: #fff;
+    transform: scale(0.95);
+}
+
+
+
+.price-buy {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 20px; 
+    margin-top: -18px;
+    margin-bottom: 120px;
+}
+
+.buy {
+    
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: -20px;
+}
+
+.buy:hover {
+    background-color: #0056b3; 
+}
+
+.buy:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
 
 .card-name {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
+    margin-top: -30px;
     padding: 10px;
 }
 
 .card-price {
-    font-size: 16px;
+    font-size: 18px;
     color: #555;
-    margin-bottom: 5rem;
-    padding-bottom: 50px;
 }
+
 
 
 .open-menu, .closemenu, button {
@@ -359,6 +439,9 @@ aside {
 
 .image-container {
     position: relative;
+    margin-top: 0%;
+    clip-path: inset(137px 0 50px 0);
+   
 }
 
 .prev-image, .next-image {
@@ -382,28 +465,56 @@ aside {
  right: 0px;
 }
 
+.color-buttons button{
+    padding: 18px;
+    border: none;
+    margin: 2px;
+    
+}
+.color-buttons {
+    
+    margin-bottom: 30px;
+}
 
 .color-btn-white{
     background-color: #fff;
+    
 }
+
+
 
 .color-btn-white-black{
     background: linear-gradient(135deg, #ffffff 50%, #000000 50%)
 }
-.color-btn-blue{
-    background-color: #409fff;
+
+.color-btn-white-blue{
+    background: linear-gradient(135deg, #ffffff 50%, #5499ff 50%)
 }
+
+.color-btn-white-red{
+    background: linear-gradient(135deg, #ffffff 50%, #ff0000 50%)
+}
+
+.color-btn-white-purple{
+    background: linear-gradient(135deg, #ffffff 50%, rgb(180, 59, 180) 50%)
+}
+.color-btn-blue {
+    background-color: #409fff !important;
+}
+
 .color-btn-red{
-    background-color: #ff0000;
+    background-color: #ff0000 !important;
 }
 
 .card-image {
     width: 100%;
     height: auto;  
     display: block; 
+    cursor: zoom-in;
+    
   }
 
-  /* Cookies */
+                           /* Cookies */
 
 .wrap{
     position: fixed;
@@ -497,7 +608,7 @@ border: 1px solid #333;
 }
 
 
-/* Footer General */
+                        /* Footer General */
 
 
 footer {
@@ -508,6 +619,7 @@ footer {
     font-family: Arial, sans-serif;
     font-size: 14px;
     position: relative;
+    height: 100vh;
 }
 
 .texto-footer {
@@ -575,6 +687,7 @@ footer .legal-info {
 footer .legal-info a {
     margin: 0 10px;
     font-size: 14px;
+    padding: 10px;
 }
 
 footer span.material-symbols-outlined {
@@ -592,3 +705,39 @@ footer span.material-symbols-outlined {
     transform: scale(1.2); 
     color: #0077ff; 
 }
+
+.payment-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+    
+}
+
+.support-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+    
+}
+
+.follow-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+    
+}
+
+.location-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+    
+}
+
+
+
+
