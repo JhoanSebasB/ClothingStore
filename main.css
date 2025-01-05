@@ -310,6 +310,57 @@ aside {
     }
 }
 
+                      /* Animacion nike y imagen */
+
+                   
+
+  .nike-container {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin-bottom: 400px; 
+    margin-top: 200px;  
+    background-color: green;
+    
+  }
+  
+  h1 {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: "Kanit", sans-serif;
+    font-size: 10em;
+    color: #000000;
+    line-height: 1;
+    cursor: pointer;
+  }
+  
+  .nike-container .nike {
+    
+    width: 100%;
+    max-width: 800px;
+    transform: translate(0%, -50%) rotate(0);
+    left: 50%;
+    top: 50%;
+    transition: 1s;
+    opacity: 0;
+  }
+  
+  .nike-container:hover .nike {
+    opacity: 1;
+    transform: translate(-55%, -45%) rotate(-20deg);
+  }
+  
+  h1:last-child {
+    color: transparent;
+    -webkit-text-stroke: 4px #000000;
+  }
+  
+
+  
+
                          /* Las cards */
 
 .card-container {
@@ -510,14 +561,14 @@ aside {
     width: 100%;
     height: auto;  
     display: block; 
-    cursor: zoom-in;
+    /*  cursor: zoom-in; */
     
   }
 
                            /* Cookies */
 
 .wrap{
-    position: fixed;
+    position: absolute;
     bottom: 50px;
     right: -370px;
     max-width: 345px;
@@ -737,7 +788,4 @@ footer span.material-symbols-outlined {
     gap: 8px; 
     
 }
-
-
-
 
