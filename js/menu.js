@@ -221,7 +221,7 @@ if (cardData) {
 
 
 
-  /* Comprar mediante whatsapp */
+  /* Comprar mediante whatsapp 
   
   function saveShoeDetails(cardId) {
     let shoeData;
@@ -232,16 +232,28 @@ if (cardData) {
             name: selectedShoeName1,
             price: selectedShoePrice1
         };
-    } else {
+    } else if (cardId === 'card-image-1-hombre') {
         shoeData = {
             size: selectedSize2,
             color: selectedColor2,
             name: selectedShoeName2,
             price: selectedShoePrice2
         };
+    } else if (cardId === 'card-image-3-mujer') {
+        shoeData = {
+            size: selectedSize3,
+            color: selectedColor3,
+            name: selectedShoeName3,
+            price: selectedShoePrice3
+        };
     }
 
-    
+    // Check if shoe data is selected
+    if (!shoeData) {
+        alert("Please select a valid shoe.");
+        return;
+    }
+
     const message = `
     ¡Estoy interesado en los siguientes zapatos! 👟
         Nombre: ${shoeData.name}
@@ -250,16 +262,13 @@ if (cardData) {
         Precio: ${shoeData.price}
     `;
 
-    
     const phoneNumber = "+573209504702";  
-
-    
     const encodedMessage = encodeURIComponent(message);
     const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-   
     window.open(url, '_blank');
 }
+*/
 
 
 
@@ -270,3 +279,27 @@ document.getElementById("carrito-btn").addEventListener("click", function() {
 document.getElementById("cerrar-carrito").addEventListener("click", function() {
     document.getElementById("pared-carrito").classList.remove("abierta");
 });
+
+
+
+
+
+// Array con las imágenes que se mostrarán aleatoriamente
+const imageArray = [
+    "https://static.nike.com/a/images/w_1280,q_auto,f_auto/5a2c6eb0-0647-4317-9160-4d5106f7408b/fecha-de-lanzamiento-del-dunk-low-white-and-university-red-cu1727-100.jpg",
+    "https://static.nike.com/a/images/w_1280,q_auto,f_auto/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+FORCE+1+%2707.png",
+    
+  ];
+  
+  // Seleccionar el elemento de la imagen
+  const hoverImage = document.getElementById('hover-image');
+  
+  // Función para cambiar la imagen aleatoriamente
+  function changeImage() {
+    const randomIndex = Math.floor(Math.random() * imageArray.length); // Generar un índice aleatorio
+    hoverImage.src = imageArray[randomIndex]; // Cambiar la fuente de la imagen
+  }
+  
+  // Agregar el evento hover para cambiar la imagen
+  document.querySelector('.nike-container').addEventListener('mouseenter', changeImage);
+  
