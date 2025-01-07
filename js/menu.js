@@ -76,6 +76,31 @@ setInterval(updateText, 5000);
 
 
 
+/* Cambio en la imagen principal */
+
+const images = [
+    "https://static.nike.com/a/images/w_1280,q_auto,f_auto/5a2c6eb0-0647-4317-9160-4d5106f7408b/fecha-de-lanzamiento-del-dunk-low-white-and-university-red-cu1727-100.jpg",
+    "https://static.nike.com/a/images/w_1280,q_auto,f_auto/a3e7dead-1ad2-4c40-996d-93ebc9df0fca/dunk-low-black-release-date.jpg",
+    "https://static.nike.com/a/images/w_1280,q_auto,f_auto/63c770a7-fc62-44e8-a7ba-cd47d130d448/dunk-low-university-blue-release-date.jpg"
+  ];
+
+  let currentImageIndex = 0;
+  const imageElement = document.getElementById('img-p');
+
+  function changeImage() {
+    // Transición suave para cambiar la imagen
+    imageElement.style.opacity = 0;
+    setTimeout(() => {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      imageElement.src = images[currentImageIndex];
+      imageElement.style.opacity = 1;
+    }, 500); // Tiempo sincronizado con la transición
+  }
+
+  setInterval(changeImage, 3000);
+
+
+
 /* Cards */
 
 const buttons = document.querySelectorAll('.btn');
@@ -282,7 +307,7 @@ document.getElementById("cerrar-carrito").addEventListener("click", function() {
 
 
 
-
+/* 
 
 // Array con las imágenes que se mostrarán aleatoriamente
 const imageArray = [
@@ -302,4 +327,4 @@ const imageArray = [
   
   // Agregar el evento hover para cambiar la imagen
   document.querySelector('.nike-container').addEventListener('mouseenter', changeImage);
-  
+   */
