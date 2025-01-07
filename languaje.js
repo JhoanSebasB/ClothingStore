@@ -13,6 +13,8 @@ const translations = {
         hombre: "Men",
         mujer: "Women",
         size: "Size:",
+        herobutton: "Explore collection",
+        herosub: "Style, comfort and quality in every step.",
     },
     es: {
         frase: "Ten la libertad de usar lo que te haga sentir ÚNICO.",
@@ -28,6 +30,7 @@ const translations = {
         hombre: "Hombre",
         mujer: "Mujer",
         size: "Tamaño:",
+        herosub: "Estilo, confort y calidad en cada paso.",
     }
 };
 
@@ -36,7 +39,7 @@ document.getElementById("btn-en").addEventListener("click", () => changeLanguage
 
 function changeLanguage(lang) {
     // Actualiza elementos con id únicos
-    const uniqueIds = ["frase", "opcionH", "opcionM", "opcionA", "terminos", "politica", "Location", "Follow", "Payment", "Support"];
+    const uniqueIds = ["frase", "opcionH", "opcionM", "opcionA", "terminos", "politica", "Location", "Follow", "Payment", "Support", "herobutton", "herosub"];
     uniqueIds.forEach(id => {
         const element = document.getElementById(id);
         if (element && translations[lang][id]) {
