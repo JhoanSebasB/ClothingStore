@@ -15,6 +15,11 @@ closeMenu.addEventListener("click", () => {
 
 
 
+
+
+
+
+
 /* Carrusel informativo */
 
 let currentLanguage = "es"; 
@@ -72,6 +77,49 @@ function setCarouselLanguage(lang) {
 
 updateText();
 setInterval(updateText, 5000);
+
+
+
+
+
+
+
+
+/* Scroll de los botones (hombre,mujer,all y el otro) hacia las Cards */
+
+function smoothScrollToCard() {
+    const card = document.querySelector(".card");
+    const offset = -110; 
+    const topPosition = card.getBoundingClientRect().top + window.scrollY + offset;
+
+    window.scrollTo({ top: topPosition, behavior: "smooth" });
+}
+
+
+document.querySelector(".hero-button").addEventListener("click", smoothScrollToCard);
+
+
+document.querySelectorAll(".btn").forEach(button => {
+    button.addEventListener("click", smoothScrollToCard);
+});
+
+
+
+const inicioIcono = document.getElementById("inicio-icono");
+
+// Añadir el evento de clic al icono
+inicioIcono.addEventListener("click", () => {
+    // Desplazar suavemente al inicio de la página
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+
+
+
+
 
 
 
@@ -295,7 +343,7 @@ if (cardData) {
 }
 */
 
-
+/* Carrito */
 
 document.getElementById("carrito-btn").addEventListener("click", function() {
     document.getElementById("pared-carrito").classList.toggle("abierta");
@@ -328,3 +376,7 @@ const imageArray = [
   // Agregar el evento hover para cambiar la imagen
   document.querySelector('.nike-container').addEventListener('mouseenter', changeImage);
    */
+
+
+
+
