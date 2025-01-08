@@ -166,6 +166,7 @@ aside {
 #cerrar-carrito .material-symbols-outlined {
     font-size: 2rem;
     color: #333;
+    
 }
 
 
@@ -384,26 +385,27 @@ aside {
 }
 
 
-
+/* 
 #img-principal {
     position: relative;
     
     
-}
+} */
 
 
 #img-principal p {
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0.1;
+    position: absolute; /* Posiciona el texto sobre la imagen */
+    top: 90%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    opacity: 0.1; 
     padding: 1vw 2vw;
-    line-height: 100px;
+    line-height: 1.2; 
     font-size: 100px;
     font-weight: 600;
-    text-align: center;
-    width: 600px;
+    color: rgb(90, 90, 90); 
+    z-index: 2; 
+    text-align: center; 
 }
 
 
@@ -441,6 +443,7 @@ aside {
     border-radius: 30px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
+    
 }
 
 
@@ -670,13 +673,13 @@ aside {
     background-color: #ff0000 !important;
 }
 
-.card-image {
+/*.card-image {
     width: 100%;
     height: auto;  
     display: block; 
-    /*  cursor: zoom-in; */
+    cursor: zoom-in; 
     
-  }
+  }*/
 
                            /* Cookies */
 
