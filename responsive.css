@@ -122,6 +122,25 @@
     
     }
 
+    #inicio-icono{
+        position: absolute;
+        right: 200px;
+    } 
+    
+    .card {
+        width: 75%;
+        
+    }
+    
+    .card img {
+        width: 300px; 
+        padding-top: 50px ;
+    }
+    
+    
+
+    
+
     
     
 
