@@ -117,15 +117,13 @@
     }
 
     #img-principal p {
-        top: 300px;
+        bottom: -200px;
         font-size: 60px;
-    
+        width: 100%;
+        
     }
 
-    #inicio-icono{
-        position: absolute;
-        right: 200px;
-    } 
+    
     
     .card {
         width: 75%;
