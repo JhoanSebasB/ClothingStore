@@ -269,6 +269,11 @@
         padding-right: 0% ; 
     }
 
+    .hero-cent{
+
+        margin-left: 3rem;
+    }
+
     
     
 
@@ -343,9 +348,7 @@
         margin: 0; 
     }
 
-    .hero-cent{
-        margin-left: 3rem;
-    }
+    
 
 }
 
