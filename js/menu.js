@@ -107,14 +107,24 @@ document.querySelectorAll(".btn").forEach(button => {
 
 const inicioIcono = document.getElementById("inicio-icono");
 
-// Añadir el evento de clic al icono
-inicioIcono.addEventListener("click", () => {
-    // Desplazar suavemente al inicio de la página
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+if (inicioIcono) { // Verifica si el elemento existe
+    // Mostrar/ocultar el botón según el scroll
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) { // Mostrar después de 100px de desplazamiento
+            inicioIcono.style.display = "block";
+        } else {
+            inicioIcono.style.display = "none";
+        }
     });
-});
+
+    // Añadir el evento de clic al icono
+    inicioIcono.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+}
 
 
 
