@@ -1,5 +1,4 @@
-/* Cambiar imagenes en las cards */ 
-
+/* Cambiar imágenes en las cards */ 
 
 // Arreglos de imágenes para cada categoría
 const shoeColors = [
@@ -21,13 +20,12 @@ const shoeColors = [
         "https://static.nike.com/a/images/w_1280,q_auto,f_auto/5a2c6eb0-0647-4317-9160-4d5106f7408b/fecha-de-lanzamiento-del-dunk-low-white-and-university-red-cu1727-100.jpg",
         "https://static.nike.com/a/images/w_1280,q_auto,f_auto/717dcf88-ae67-49d2-807e-387abb332c3e/fecha-de-lanzamiento-del-dunk-low-white-and-university-red-cu1727-100.jpg"
     ],
-     // Purple
-     [
+    // Purple
+    [
         "https://nikeco.vtexassets.com/arquivos/ids/628035-1280-auto?v=638550347320600000&width=150&height=auto&aspect=true",
         "https://nikeco.vtexassets.com/arquivos/ids/614796-1280-auto?v=638549409135100000&width=150&height=auto&aspect=true",
         "https://nikeco.vtexassets.com/arquivos/ids/621614-1280-auto?v=638550341020470000&width=150&height=auto&aspect=true"
     ]
-
 ];
 
 const shoeairforce = [
@@ -36,7 +34,6 @@ const shoeairforce = [
         "https://nikeco.vtexassets.com/arquivos/ids/235120-1280-auto?v=638349756632900000&width=150&height=auto&aspect=true",
         "https://nikeco.vtexassets.com/arquivos/ids/197130-1280-auto?v=638343774195200000&width=150&height=auto&aspect=true",
         "https://nikeco.vtexassets.com/arquivos/ids/216386-1280-auto?v=638346288873630000&width=150&height=auto&aspect=true"
-       
     ],
     // Negro
     [
@@ -44,26 +41,22 @@ const shoeairforce = [
         "https://static.nike.com/a/images/w_1280,q_auto,f_auto/ca38a642-ec6e-450f-8935-f0d71f279d33/air-force-1-07-fresh-dm0211-001.jpg",
         "https://static.nike.com/a/images/w_1280,q_auto,f_auto/a6b2de60-cc06-4757-88bb-5fc6556f816f/air-force-1-07-fresh-dm0211-001.jpg"
     ],
-    
 ];
 
 const shoeNike = [
-    // Amarillo
+    // Blanco
     [
         "https://nikeco.vtexassets.com/arquivos/ids/691041-1200-auto?v=638623774829370000&width=1200&height=auto&aspect=true",
-        "https://static.nike.com/a/images/w_1280,q_auto,f_auto/5678.jpg",
-        "https://static.nike.com/a/images/w_1280,q_auto,f_auto/91011.jpg"
+        "https://nikeco.vtexassets.com/arquivos/ids/677983-1200-auto?v=638623624045400000&width=1200&height=auto&aspect=true",
+        "https://nikeco.vtexassets.com/arquivos/ids/684610-1200-auto?v=638623759274430000&width=1200&height=auto&aspect=true"
     ],
     // Verde
     [
-        "https://static.nike.com/a/images/w_1280,q_auto,f_auto/1213.jpg",
-        "https://static.nike.com/a/images/w_1280,q_auto,f_auto/1415.jpg",
-        "https://static.nike.com/a/images/w_1280,q_auto,f_auto/1617.jpg"
+        "https://nikeco.vtexassets.com/arquivos/ids/704695-1200-auto?v=638628803305600000&width=1200&height=auto&aspect=true",
+        "https://nikeco.vtexassets.com/arquivos/ids/702688-1200-auto?v=638628787023100000&width=1200&height=auto&aspect=true",
+        "https://nikeco.vtexassets.com/arquivos/ids/703777-1200-auto?v=638628799300230000&width=1200&height=auto&aspect=true"
     ]
 ];
-
-
-
 
 let currentColorIndexHombre = 0; 
 let currentImageIndexHombre = 0; 
@@ -73,7 +66,6 @@ let currentImageIndexMujer = 0;
 
 let currentColorIndexNike = 0; 
 let currentImageIndexNike = 0;
-
 
 function changeCardImage(direction, imageId) {
     const imgElement = document.getElementById(imageId);
@@ -111,7 +103,6 @@ function changeCardImage(direction, imageId) {
     imgElement.src = images[imageId.includes('hombre') ? currentImageIndexHombre : imageId.includes('mujer') ? currentImageIndexMujer : currentImageIndexNike];
 }
 
-
 function changeShoeColor(colorIndex, imageId) {
     if (imageId.includes('hombre')) {
         currentColorIndexHombre = colorIndex;
@@ -138,7 +129,6 @@ function changeShoeColor(colorIndex, imageId) {
     imgElement.src = images[0];
 }
 
-
 window.onload = function() {
     const imgElementHombre = document.getElementById('card-image-1-hombre');
     const imgElementMujer = document.getElementById('card-image-2-mujer');
@@ -148,6 +138,7 @@ window.onload = function() {
     imgElementMujer.src = shoeairforce[currentColorIndexMujer][currentImageIndexMujer]; 
     imgElementNike.src = shoeNike[currentColorIndexNike][currentImageIndexNike]; 
 };
+
 
 
 
@@ -218,3 +209,6 @@ function changeShoeColor(colorIndex, imageId) {
     saveSelection(colorIndex, imageId);
 }
 */
+
+
+
