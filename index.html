@@ -86,18 +86,42 @@
                 
                 <!-- Pared del carrito -->
                 <div id="pared-carrito" class="pared">
-                    <div class="contenido-carrito">
-                        <h2>
+                    <div class="contenido-carrito" style="background-color: #fff;">
+                        <h2 >
                             Carrito
                             <button id="cerrar-carrito">
                                 <span class="material-symbols-outlined">close</span>
                             </button>
                         </h2>
-                        <!-- Aquí puedes agregar los productos del carrito -->
-                        <p>Producto 1</p>
-                        <p>Producto 2</p>
+                       
+                    </div>
+                    <div class="carrito-items">
+                        <!-- Los 4 primeros elementos se mostrarán normalmente -->
+                    </div>
+                    <div class="slider-container">
+                        <div class="slider">
+                            <!-- El resto de los elementos se mostrarán aquí como slider -->
+                        </div>
+                    </div>
+                    
+                    <div class="carrito-total">
+                        <div class="fila">
+                            <strong>Tu Total</strong>
+                            <span class="carrito-precio-total">
+                                $0.00
+                            </span>
+                        </div>
+                        <!--  <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>-->
+                        <button class="btn-pagar" id="send-whatsapp" onclick="enviarCarritoPorWhatsApp(), actualizarNumerito()">Enviar por WhatsApp  <span class="material-symbols-outlined">
+                            payments
+                            </span></button> 
+
                     </div>
                 </div>
+
+                <!-- panel carrito 2 -->
+
+               
                 
             </main>
           
@@ -123,7 +147,7 @@
                     <button id="herobutton" class="hero-button">Explorar colección</button>
                 </div>
                 <div id="img-principal">
-                    <img id="img-p" src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/5a2c6eb0-0647-4317-9160-4d5106f7408b/fecha-de-lanzamiento-del-dunk-low-white-and-university-red-cu1727-100.jpg" alt="Nike Dunk Low" class="hero-image"   >
+                    <img id="img-p" src="https://static.nike.com/a/images/w_1280,q_auto,f_auto/5a2c6eb0-0647-4317-9160-4d5106f7408b/fecha-de-lanzamiento-del-dunk-low-white-and-university-red-cu1727-100.jpg" alt="Nike Dunk Low" class="hero-image"  >
                     <p>Just Do It</p>
                 </div>
                 
@@ -167,13 +191,14 @@
         <button class="color-btn-white" onclick="selectColor('White', 'Air force 1 Unisex', '$450.000', 'card-image-2-mujer'); changeShoeColor(0, 'card-image-2-mujer')" aria-label="White Color"></button>
         <button class="color-btn-black" style="background-color: #000;" onclick="selectColor('Black', 'Air force 1 Unisex', '$450.000', 'card-image-2-mujer'); changeShoeColor(1, 'card-image-2-mujer')" aria-label="Black Color"></button>
         </div>
-    <div class="price-buy">
+   
     <p class="card-price" id="card-price">$450.000</p>
     <!-- Botón para guardar la información -->
-    <button class="buy" id="save-button-1" onmouseover="showMessage(1)" onmouseout="hideMessage(1)"  onclick="saveShoeDetails('card-image-2-mujer')" disabled>Buy Now<p id="shoe-details-1" class="hidden-message"></p></button>
 
-    
-   
+    <div class="bottons-buy">
+        <button class="buy" id="save-button-1" onmouseover="showMessage(1)" onmouseout="hideMessage(1)"  onclick="saveShoeDetails('card-image-2-mujer')" disabled>Buy Now<p id="shoe-details-1" class="hidden-message"></p></button>
+        <button class="buy" id="save-carrito-1" onclick="agregarItemAlCarrito('Air force 1 Unisex', '$450.000', document.getElementById('card-image-2-mujer').src, selectedColor1, selectedSize1)" disabled>Add to cart<span class="material-symbols-outlined">shopping_cart</span></button>
+
     </div>
 </div>
 
@@ -204,18 +229,18 @@
     <!-- Botones para cambiar el color del zapato -->
     <div class="color-buttons">
         <p>Color: </p>
-        <button class="color-btn-white-black" onclick="selectColor('Black', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre'); changeShoeColor(0, 'card-image-1-hombre')" aria-label="Black Color"></button>
+        <button class="color-btn-white-black" onclick="selectColor('Black and white', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre'); changeShoeColor(0, 'card-image-1-hombre')" aria-label="Black Color"></button>
         <button class="color-btn-white-blue" onclick="selectColor('Blue', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre'); changeShoeColor(1, 'card-image-1-hombre')" aria-label="Blue Color"></button>
         <button class="color-btn-white-red" onclick="selectColor('Red', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre'); changeShoeColor(2, 'card-image-1-hombre')" aria-label="Red Color"></button>
         <button class="color-btn-white-purple" onclick="selectColor('Purple', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre'); changeShoeColor(3, 'card-image-1-hombre')" aria-label="Purple Color"></button>
     </div>
-<div class="price-buy">
+
     <p class="card-price">$550.000</p>
     <!-- Botón para guardar la información -->
-    <button class="buy" id="save-button-2"  onmouseover="showMessage(2)" onmouseout="hideMessage(2)" onclick="saveShoeDetails('card-image-1-hombre')" disabled>Buy Now<p id="shoe-details-2" class="hidden-message"></p></button>
-
-
-</div>
+    <div class="bottons-buy">
+        <button class="buy" id="save-button-2"  onmouseover="showMessage(2)" onmouseout="hideMessage(2)" onclick="saveShoeDetails('card-image-1-hombre')" disabled>Buy Now<p id="shoe-details-2" class="hidden-message"></p></button>
+        <button class="buy" id="save-carrito-2" onclick="agregarItemAlCarrito('Dunk Low Hombre', '$550.000', document.getElementById('card-image-1-hombre').src, selectedColor2, selectedSize2)" disabled>Add to cart<span class="material-symbols-outlined" >shopping_cart</span></button>
+    </div>
 </div>
             
               
@@ -248,10 +273,13 @@
         <button class="color-btn-white" onclick="selectColor('White', 'Nike Free Metcon 6 Mujer', '$410.000', 'card-image-3-nike'); changeShoeColor(0, 'card-image-3-nike')" aria-label="White Color"></button>
         <button class="color-btn-white-black" onclick="selectColor('Black and white', 'Nike Free Metcon 6 Mujer', '$410.000', 'card-image-3-nike'); changeShoeColor(1, 'card-image-3-nike')" aria-label="Black Color"></button>
         </div>
-    <div class="price-buy">
+  
     <p class="card-price" id="card-price">$410.000</p>
     <!-- Botón para guardar la información -->
-    <button class="buy" id="save-button-3" onmouseover="showMessage(3)" onmouseout="hideMessage(3)"  onclick="saveShoeDetails('card-image-3-nike')" disabled>Buy Now<p id="shoe-details-3" class="hidden-message"></p></button>
+
+    <div class="bottons-buy">
+        <button class="buy" id="save-button-3" onmouseover="showMessage(3)" onmouseout="hideMessage(3)"  onclick="saveShoeDetails('card-image-3-nike')" disabled>Buy Now<p id="shoe-details-3" class="hidden-message"></p></button>
+        <button class="buy" id="save-carrito-3" onclick="agregarItemAlCarrito('Nike Free Metcon 6', '$410.000', document.getElementById('card-image-3-nike').src, selectedColor3, selectedSize3)" disabled>Add to Cart  <span class="material-symbols-outlined">shopping_cart</span></button>
    
     </div>
 </div>
@@ -397,6 +425,7 @@
     <script src="./js/menu.js" defer></script>
     <script src="image.js" defer></script>
     <script src="languaje.js" defer></script>
+    <script src="carrito.js" defer></script>
     <script>
 
 /* mensaje cuando el cursor esta apagado */
@@ -455,7 +484,7 @@ function hideMessage(cardId) {
 
 
 
-/*  */
+/* Almacenar todo para la compra */
 
         let selectedSize1 = null;
         let selectedColor1 = null;
@@ -517,25 +546,31 @@ function hideMessage(cardId) {
             if (cardId === 1) {
                 if (selectedSize1 && selectedColor1) {
                     document.getElementById('save-button-1').disabled = false;
+                    document.getElementById('save-carrito-1').disabled = false;
                     document.getElementById('shoe-details-1').textContent = '';
                 } else {
                     document.getElementById('save-button-1').disabled = true;
+                    document.getElementById('save-carrito-1').disabled = true;
                     document.getElementById('shoe-details-1').textContent = '';
                 }
             } else if (cardId === 2) {
                 if (selectedSize2 && selectedColor2) {
                     document.getElementById('save-button-2').disabled = false;
+                    document.getElementById('save-carrito-2').disabled = false;
                     document.getElementById('shoe-details-2').textContent = '';
                 } else {
                     document.getElementById('save-button-2').disabled = true;
+                    document.getElementById('save-carrito-2').disabled = true;
                     document.getElementById('shoe-details-2').textContent = '';
                 }
             } else if (cardId === 3) {
                 if (selectedSize3 && selectedColor3) {
                     document.getElementById('save-button-3').disabled = false;
+                    document.getElementById('save-carrito-3').disabled = false;
                     document.getElementById('shoe-details-3').textContent = '';
                 } else {
                     document.getElementById('save-button-3').disabled = true;
+                    document.getElementById('save-carrito-3').disabled = true;
                     document.getElementById('shoe-details-3').textContent = '';
                 }
             }
