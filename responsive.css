@@ -130,7 +130,7 @@
     
     
     .card {
-        width: 75%;
+        width: 100%;
         
     }
     
@@ -219,6 +219,11 @@
         border: 1px solid #333;
     }
 
+    .card img {
+        width: 400px;
+        
+    }
+
     
 
     
@@ -277,6 +282,27 @@
 
         margin-left: 3rem;
     }
+
+    .info {
+        display: flex;
+        flex-direction: column; /* Orientación vertical */
+        align-items: center; /* Centra los elementos horizontalmente */
+        gap: 10px; /* Espacio entre los elementos */
+        margin: 20px 0; /* Espaciado vertical alrededor del contenedor */
+        
+    }
+    
+    .info span {
+        padding: 10px 20px; /* Espaciado interno de cada elemento */
+       
+        border-radius: 5px; /* Bordes redondeados */
+        font-size: 16px; /* Tamaño del texto */
+       
+        text-align: center; /* Centra el texto */
+        white-space: nowrap; /* Evita que el texto se divida */
+    }
+    
+    
 
     
     
