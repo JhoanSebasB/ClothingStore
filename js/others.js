@@ -67,6 +67,14 @@ function showMessage(cardId) {
         selectedSize = selectedSize3;
         selectedColor = selectedColor3;
         messageElement = document.getElementById('shoe-details-3');
+    } else if (cardId === 4) {
+        selectedSize = selectedSize4;
+        selectedColor = selectedColor4;
+        messageElement = document.getElementById('shoe-details-4');
+    } else if (cardId === 5) {
+        selectedSize = selectedSize5;
+        selectedColor = selectedColor5;
+        messageElement = document.getElementById('shoe-details-5');
     }
 
     // Verificar si no se ha seleccionado talla o color
@@ -105,6 +113,7 @@ function hideMessage(cardId) {
 
 
 
+
 /* Almacenar todo para la compra */
 
         let selectedSize1 = null;
@@ -121,6 +130,16 @@ function hideMessage(cardId) {
         let selectedColor3 = null;
         let selectedShoeName3 = null;
         let selectedShoePrice3 = null;
+
+        let selectedSize4 = null;
+        let selectedColor4 = null;
+        let selectedShoeName4 = null;
+        let selectedShoePrice4 = null;
+
+        let selectedSize5 = null;
+        let selectedColor5 = null;
+        let selectedShoeName5 = null;
+        let selectedShoePrice5 = null;
     
        
         function selectSize(size, name, price, cardId) {
@@ -139,6 +158,16 @@ function hideMessage(cardId) {
                 selectedShoeName3 = name;
                 selectedShoePrice3 = price;
                 checkSelection(3);
+            } else if (cardId === 'card-image-4-airjordanlow') {
+                selectedSize4 = size;
+                selectedShoeName4 = name;
+                selectedShoePrice4 = price;
+                checkSelection(4);
+            } else if (cardId === 'card-image-5-airjordanhighog') {
+                selectedSize5 = size;
+                selectedShoeName5 = name;
+                selectedShoePrice5 = price;
+                checkSelection(5);
             }
         }
     
@@ -159,43 +188,120 @@ function hideMessage(cardId) {
                 selectedShoeName3 = name;
                 selectedShoePrice3 = price;
                 checkSelection(3);
+            } else if (cardId === 'card-image-4-airjordanlow') {
+                selectedColor4 = color;
+                selectedShoeName4 = name;
+                selectedShoePrice4 = price;
+                checkSelection(4);
+            } else if (cardId === 'card-image-5-airjordanhighog') {
+                selectedColor5 = color;
+                selectedShoeName5 = name;
+                selectedShoePrice5 = price;
+                checkSelection(5);
             }
         }
     
         
         function checkSelection(cardId) {
+            let shoeDetailsElement;
             if (cardId === 1) {
-                if (selectedSize1 && selectedColor1) {
-                    document.getElementById('save-button-1').disabled = false;
-                    document.getElementById('save-carrito-1').disabled = false;
-                    document.getElementById('shoe-details-1').textContent = '';
-                } else {
-                    document.getElementById('save-button-1').disabled = true;
-                    document.getElementById('save-carrito-1').disabled = true;
-                    document.getElementById('shoe-details-1').textContent = '';
-                }
+                shoeDetailsElement = document.getElementById('shoe-details-1');
             } else if (cardId === 2) {
-                if (selectedSize2 && selectedColor2) {
-                    document.getElementById('save-button-2').disabled = false;
-                    document.getElementById('save-carrito-2').disabled = false;
-                    document.getElementById('shoe-details-2').textContent = '';
-                } else {
-                    document.getElementById('save-button-2').disabled = true;
-                    document.getElementById('save-carrito-2').disabled = true;
-                    document.getElementById('shoe-details-2').textContent = '';
-                }
+                shoeDetailsElement = document.getElementById('shoe-details-2');
             } else if (cardId === 3) {
-                if (selectedSize3 && selectedColor3) {
-                    document.getElementById('save-button-3').disabled = false;
-                    document.getElementById('save-carrito-3').disabled = false;
-                    document.getElementById('shoe-details-3').textContent = '';
-                } else {
-                    document.getElementById('save-button-3').disabled = true;
-                    document.getElementById('save-carrito-3').disabled = true;
-                    document.getElementById('shoe-details-3').textContent = '';
-                }
+                shoeDetailsElement = document.getElementById('shoe-details-3');
+            } else if (cardId === 4) {
+                shoeDetailsElement = document.getElementById('shoe-details-4');
+            } else if (cardId === 5) {
+                shoeDetailsElement = document.getElementById('shoe-details-5');
             }
+        
+            // Verificar si el elemento existe
+            if (shoeDetailsElement) {
+                if (cardId === 1) {
+                    if (selectedSize1 && selectedColor1) {
+                        document.getElementById('save-button-1').disabled = false;
+                        document.getElementById('save-carrito-1').disabled = false;
+                        shoeDetailsElement.textContent = '';
+                    } else {
+                        document.getElementById('save-button-1').disabled = true;
+                        document.getElementById('save-carrito-1').disabled = true;
+                        shoeDetailsElement.textContent = '';
+                    }
+                } else if (cardId === 2) {
+                    if (selectedSize2 && selectedColor2) {
+                        document.getElementById('save-button-2').disabled = false;
+                        document.getElementById('save-carrito-2').disabled = false;
+                        shoeDetailsElement.textContent = '';
+                    } else {
+                        document.getElementById('save-button-2').disabled = true;
+                        document.getElementById('save-carrito-2').disabled = true;
+                        shoeDetailsElement.textContent = '';
+                    }
+                } else if (cardId === 3) {
+                    if (selectedSize3 && selectedColor3) {
+                        document.getElementById('save-button-3').disabled = false;
+                        document.getElementById('save-carrito-3').disabled = false;
+                        shoeDetailsElement.textContent = '';
+                    } else {
+                        document.getElementById('save-button-3').disabled = true;
+                        document.getElementById('save-carrito-3').disabled = true;
+                        shoeDetailsElement.textContent = '';
+                    }
+                } else if (cardId === 3) {
+                    if (selectedSize3 && selectedColor3) {
+                        document.getElementById('save-button-3').disabled = false;
+                        document.getElementById('save-carrito-3').disabled = false;
+                        shoeDetailsElement.textContent = '';
+                    } else {
+                        document.getElementById('save-button-3').disabled = true;
+                        document.getElementById('save-carrito-3').disabled = true;
+                        shoeDetailsElement.textContent = '';
+                    }
+                } else if (cardId === 3) {
+                    if (selectedSize3 && selectedColor3) {
+                        document.getElementById('save-button-3').disabled = false;
+                        document.getElementById('save-carrito-3').disabled = false;
+                        shoeDetailsElement.textContent = '';
+                    } else {
+                        document.getElementById('save-button-3').disabled = true;
+                        document.getElementById('save-carrito-3').disabled = true;
+                        shoeDetailsElement.textContent = '';
+                    }
+                } else if (cardId === 3) {
+                    if (selectedSize3 && selectedColor3) {
+                        document.getElementById('save-button-3').disabled = false;
+                        document.getElementById('save-carrito-3').disabled = false;
+                        shoeDetailsElement.textContent = '';
+                    } else {
+                        document.getElementById('save-button-3').disabled = true;
+                        document.getElementById('save-carrito-3').disabled = true;
+                        shoeDetailsElement.textContent = '';
+                    }
+                } else if (cardId === 4) {
+                    if (selectedSize4 && selectedColor4) {
+                        document.getElementById('save-button-4').disabled = false;
+                        document.getElementById('save-carrito-4').disabled = false;
+                        shoeDetailsElement.textContent = '';
+                    } else {
+                        document.getElementById('save-button-4').disabled = true;
+                        document.getElementById('save-carrito-4').disabled = true;
+                        shoeDetailsElement.textContent = '';
+                    }
+                } else if (cardId === 5) {
+                    if (selectedSize5 && selectedColor5) {
+                        document.getElementById('save-button-5').disabled = false;
+                        document.getElementById('save-carrito-5').disabled = false;
+                        shoeDetailsElement.textContent = '';
+                    } else {
+                        document.getElementById('save-button-5').disabled = true;
+                        document.getElementById('save-carrito-5').disabled = true;
+                        shoeDetailsElement.textContent = '';
+                    }
+                }
+            } 
         }
+        
     
         // Función para guardar la información y mostrarla
         function saveShoeDetails(cardId) {
@@ -220,6 +326,20 @@ function hideMessage(cardId) {
             color: selectedColor3,
             name: selectedShoeName3,
             price: selectedShoePrice3
+        };
+    } else if (cardId === 'card-image-4-airjordanlow') {
+        shoeData = {
+            size: selectedSize4,
+            color: selectedColor4,
+            name: selectedShoeName4,
+            price: selectedShoePrice4
+        };
+    } else if (cardId === 'card-image-5-airjordanhighog') {
+        shoeData = {
+            size: selectedSize5,
+            color: selectedColor5,
+            name: selectedShoeName5,
+            price: selectedShoePrice5
         };
     }
 
