@@ -161,163 +161,9 @@
 
         <div class="card-container">
 
-            <!-- Primera Card (Mujer) -->
-<div class="card" data-category="mujer hombre">
-    <div class="image-container">
-        
-            <img id="card-image-2-mujer" alt="Card Image Mujer" class="card-image">
-            
-          
-        <button class="prev-image" onclick="changeCardImage('prev', 'card-image-2-mujer'); event.stopPropagation(); return false;" aria-label="Previous Image">
-            <span class="material-symbols-outlined">arrow_back_ios</span>
-        </button>
-        <button class="next-image" onclick="changeCardImage('next', 'card-image-2-mujer'); event.stopPropagation(); return false;" aria-label="Next Image">
-            <span class="material-symbols-outlined">arrow_forward_ios</span>
-        </button>
-    </div>
-    <p class="card-name" id="card-name">Air force 1 <span data-translation="hombre">Hombre</span></p>
-    <!-- Botones para seleccionar el tamaño del zapato -->
-    <div class="size-buttons">
-        <p data-translation="size">Size: </p>
-        <button class="size-btn" onclick="selectSize('38', 'Air force 1 Unisex', '$450.000', 'card-image-2-mujer')" aria-label="Size 38">38</button>
-        <button class="size-btn" onclick="selectSize('39', 'Air force 1 Unisex', '$450.000', 'card-image-2-mujer')" aria-label="Size 39">39</button>
-        <button class="size-btn" onclick="selectSize('40', 'Air force 1 Unisex', '$450.000', 'card-image-2-mujer')" aria-label="Size 40">40</button>
-        <button class="size-btn" onclick="selectSize('41', 'Air force 1 Unisex', '$450.000', 'card-image-2-mujer')" aria-label="Size 41">41</button>
-    </div>
+            <div id="cards-container" class="cards-container"></div>
 
-    <!-- Botones para cambiar el color del zapato -->
-    <div class="color-buttons">
-        <p>Color: </p>
-        <button class="color-btn-white" onclick="selectColor('White', 'Air force 1 Unisex', '$450.000', 'card-image-2-mujer'); changeShoeColor(0, 'card-image-2-mujer')" aria-label="White Color"></button>
-        <button class="color-btn-black" style="background-color: #000;" onclick="selectColor('Black', 'Air force 1 Unisex', '$450.000', 'card-image-2-mujer'); changeShoeColor(1, 'card-image-2-mujer')" aria-label="Black Color"></button>
-        </div>
-   
-    <p class="card-price" id="card-price">$450.000</p>
-    <!-- Botón para guardar la información -->
 
-    <div class="bottons-buy">
-        <button class="buy" id="save-button-1" onmouseover="showMessage(1)" onmouseout="hideMessage(1)"  onclick="saveShoeDetails('card-image-2-mujer')" disabled>Buy Now<p id="shoe-details-1" class="hidden-message"></p></button>
-        <button class="buy" id="save-carrito-1" onclick="agregarItemAlCarrito('Air force 1 Unisex', '$450.000', document.getElementById('card-image-2-mujer').src, selectedColor1, selectedSize1)" disabled>Add to cart<span class="material-symbols-outlined">shopping_cart</span></button>
-
-    </div>
-</div>
-
-<!-- Segunda Card (Hombre) -->
-<div class="card" data-category="hombre">
-    <div class="image-container">
-        
-            <img id="card-image-1-hombre" alt="Card Image Hombre" class="card-image xzoom">
-
-   
-        <button class="prev-image" onclick="changeCardImage('prev', 'card-image-1-hombre'); event.stopPropagation(); return false;" aria-label="Previous Image">
-            <span class="material-symbols-outlined">arrow_back_ios</span>
-        </button>
-        <button class="next-image" onclick="changeCardImage('next', 'card-image-1-hombre'); event.stopPropagation(); return false;" aria-label="Next Image">
-            <span class="material-symbols-outlined">arrow_forward_ios</span>
-        </button>
-    </div>
-    <p class="card-name" id="card-name">Dunk Low <span data-translation="hombre">Hombre</span> </p>
-    <!-- Botones para seleccionar el tamaño del zapato -->
-    <div class="size-buttons">
-        <p data-translation="size">Size: </p>
-        <button class="size-btn" onclick="selectSize('38', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre')" aria-label="Size 38">38</button>
-        <button class="size-btn" onclick="selectSize('39', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre')" aria-label="Size 39">39</button>
-        <button class="size-btn" onclick="selectSize('40', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre')" aria-label="Size 40">40</button>
-        <button class="size-btn" onclick="selectSize('41', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre')" aria-label="Size 41">41</button>
-    </div>
-
-    <!-- Botones para cambiar el color del zapato -->
-    <div class="color-buttons">
-        <p>Color: </p>
-        <button class="color-btn-white-black" onclick="selectColor('Black and white', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre'); changeShoeColor(0, 'card-image-1-hombre')" aria-label="Black Color"></button>
-        <button class="color-btn-white-blue" onclick="selectColor('Blue', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre'); changeShoeColor(1, 'card-image-1-hombre')" aria-label="Blue Color"></button>
-        <button class="color-btn-white-red" onclick="selectColor('Red', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre'); changeShoeColor(2, 'card-image-1-hombre')" aria-label="Red Color"></button>
-        <button class="color-btn-white-purple" onclick="selectColor('Purple', 'Dunk Low Hombre', '$550.000', 'card-image-1-hombre'); changeShoeColor(3, 'card-image-1-hombre')" aria-label="Purple Color"></button>
-    </div>
-
-    <p class="card-price">$550.000</p>
-    <!-- Botón para guardar la información -->
-    <div class="bottons-buy">
-        <button class="buy" id="save-button-2"  onmouseover="showMessage(2)" onmouseout="hideMessage(2)" onclick="saveShoeDetails('card-image-1-hombre')" disabled>Buy Now<p id="shoe-details-2" class="hidden-message"></p></button>
-        <button class="buy" id="save-carrito-2" onclick="agregarItemAlCarrito('Dunk Low Hombre', '$550.000', document.getElementById('card-image-1-hombre').src, selectedColor2, selectedSize2)" disabled>Add to cart<span class="material-symbols-outlined" >shopping_cart</span></button>
-    </div>
-</div>
-            
-              
-             <!-- Tercera Card (Mujer) -->
-<div class="card" data-category="mujer">
-    <div class="image-container">
-        
-            <img id="card-image-3-nike" alt="Card Image Mujer" class="card-image">
-          
-        <button class="prev-image" onclick="changeCardImage('prev', 'card-image-3-nike'); event.stopPropagation(); return false;" aria-label="Previous Image">
-            <span class="material-symbols-outlined">arrow_back_ios</span>
-        </button>
-        <button class="next-image" onclick="changeCardImage('next', 'card-image-3-nike'); event.stopPropagation(); return false;" aria-label="Next Image">
-            <span class="material-symbols-outlined">arrow_forward_ios</span>
-        </button>
-    </div>
-    <p class="card-name" id="card-name">Nike Free Metcon 6 <span data-translation="mujer">Mujer</span></p>
-    <!-- Botones para seleccionar el tamaño del zapato -->
-    <div class="size-buttons">
-        <p data-translation="size">Size: </p>
-        <button class="size-btn" onclick="selectSize('38', 'Nike Free Metcon 6 Mujer', '$410.000', 'card-image-3-nike')" aria-label="Size 38">38</button>
-        <button class="size-btn" onclick="selectSize('39', 'Nike Free Metcon 6 Mujer', '$410.000', 'card-image-3-nike')" aria-label="Size 39">39</button>
-        <button class="size-btn" onclick="selectSize('40', 'Nike Free Metcon 6 Mujer', '$410.000', 'card-image-3-nike')" aria-label="Size 40">40</button>
-        <button class="size-btn" onclick="selectSize('41', 'Nike Free Metcon 6 Mujer', '$410.000', 'card-image-3-nike')" aria-label="Size 41">41</button>
-    </div>
-
-    <!-- Botones para cambiar el color del zapato -->
-    <div class="color-buttons">
-        <p>Color: </p>
-        <button class="color-btn-white" onclick="selectColor('White', 'Nike Free Metcon 6 Mujer', '$410.000', 'card-image-3-nike'); changeShoeColor(0, 'card-image-3-nike')" aria-label="White Color"></button>
-        <button class="color-btn-white-black" onclick="selectColor('Black and white', 'Nike Free Metcon 6 Mujer', '$410.000', 'card-image-3-nike'); changeShoeColor(1, 'card-image-3-nike')" aria-label="Black Color"></button>
-        </div>
-  
-    <p class="card-price" id="card-price">$410.000</p>
-    <!-- Botón para guardar la información -->
-
-    <div class="bottons-buy">
-        <button class="buy" id="save-button-3" onmouseover="showMessage(3)" onmouseout="hideMessage(3)"  onclick="saveShoeDetails('card-image-3-nike')" disabled>Buy Now<p id="shoe-details-3" class="hidden-message"></p></button>
-        <button class="buy" id="save-carrito-3" onclick="agregarItemAlCarrito('Nike Free Metcon 6', '$410.000', document.getElementById('card-image-3-nike').src, selectedColor3, selectedSize3)" disabled>Add to Cart  <span class="material-symbols-outlined">shopping_cart</span></button>
-   
-    </div>
-</div>
-            <div class="card" data-category="mujer">
-                <img src="" alt="Card Image" class="card-image">
-                <p class="card-name">Pantalón Hombre</p>
-                <p class="card-price">$25.00</p>
-            </div>
-            <div class="card" data-category="hombre">
-                <img src="" alt="Card Image" class="card-image">
-                <p class="card-name">Pantalón Hombre</p>
-                <p class="card-price">$25.00</p>
-            </div>
-            <div class="card" data-category="mujer">
-                <img src="" alt="Card Image" class="card-image">
-                <p class="card-name">Pantalón Hombre</p>
-                <p class="card-price">$25.00</p>
-            </div>
-            <div class="card" data-category="hombre">
-                <img src="" alt="Card Image" class="card-image">
-                <p class="card-name">Pantalón Hombre</p>
-                <p class="card-price">$25.00</p>
-            </div>
-            <div class="card" data-category="hombre">
-                <img src="" alt="Card Image" class="card-image">
-                <p class="card-name">Pantalón Hombre</p>
-                <p class="card-price">$25.00</p>
-            </div>
-            <div class="card" data-category="mujer">
-                <img src="" alt="Card Image" class="card-image">
-                <p class="card-name">Pantalón Hombre</p>
-                <p class="card-price">$25.00</p>
-            </div>
-            <div class="card" data-category="hombre">
-                <img src="" alt="Card Image" class="card-image">
-                <p class="card-name">Pantalón Hombre</p>
-                <p class="card-price">$25.00</p>
-            </div>
 
             <!-- Cookies -->
            <div class="wrap">
@@ -382,14 +228,14 @@
                         <span class="material-symbols-outlined">group</span>
                     </div>
                     <div class="info">
-                        <a href="https://facebook.com" target="_blank" aria-label="Visit our Facebook page">
-                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        <a class="si" href="https://facebook.com" target="_blank" aria-label="Visit our Facebook page">
+                            <i class="redes fab fa-facebook-f" aria-hidden="true"></i>
                         </a>
-                        <a href="https://twitter.com" target="_blank" aria-label="Visit our Twitter page">
-                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        <a class="si"  class="redes" href="https://twitter.com" target="_blank" aria-label="Visit our Twitter page">
+                            <i class="redes fab fa-twitter" aria-hidden="true"></i>
                         </a>
-                        <a href="https://instagram.com" target="_blank" aria-label="Visit our Instagram page">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        <a class="si"  class="redes" href="https://instagram.com" target="_blank" aria-label="Visit our Instagram page">
+                            <i class="redes fab fa-instagram" aria-hidden="true"></i>
                         </a>
                     </div>
                     
@@ -416,7 +262,8 @@
         </footer>
         
         
-        
+      
+
         
         
         
@@ -427,5 +274,31 @@
     <script src="./js/languaje.js" defer></script>
     <script src="./js/carrito.js" defer></script>
     <script src="./js/others.js"></script>
+    <script src="./js/cards.js"></script>
+    
+    <script>
+function filterByCategory(category) {
+    const cards = document.querySelectorAll('.card'); // Obtener todas las tarjetas de producto
+    cards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category'); // Categoría de la tarjeta
+
+        // Verificar si la categoría es "mujer hombre" o si coincide con la categoría seleccionada
+        if (category === 'all' || cardCategory === category || cardCategory === 'Mujer Hombre') {
+            card.style.visibility = 'visible'; // Mostrar la tarjeta
+            card.style.position = 'relative'; // Asegurar que se mantenga en su lugar
+        } else {
+            card.style.visibility = 'hidden'; // Ocultar la tarjeta
+            card.style.position = 'absolute'; // Quitarla del flujo visual
+        }
+    });
+}
+
+// Eventos de los botones
+document.getElementById('opcionH').addEventListener('click', () => filterByCategory('hombre'));
+document.getElementById('opcionM').addEventListener('click', () => filterByCategory('mujer'));
+document.getElementById('opcionA').addEventListener('click', () => filterByCategory('all'));
+
+
+    </script>
 </body>
 </html>
