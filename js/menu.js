@@ -44,6 +44,7 @@ const messages = {
 };
 
 let index = 0;
+let currentLanguage = "es";  // Definir el idioma actual
 
 const carouselText = document.getElementById("carouselText");
 
@@ -75,13 +76,11 @@ function updateText() {
     index = (index + 1) % messages[currentLanguage].length;
 }
 
-
 function setCarouselLanguage(lang) {
     currentLanguage = lang;
     index = 0; 
     updateText(); 
 }
-
 
 updateText();
 setInterval(updateText, 5000);
@@ -120,26 +119,9 @@ const images = [
 
 
 
-/* Cards */
 
-const buttons = document.querySelectorAll('.btn');
-const cards = document.querySelectorAll('.card');
 
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        const filter = button.getAttribute('data-filter');
 
-        cards.forEach(card => {
-            const categories = card.getAttribute('data-category').split(' '); 
-
-            if (filter === 'all' || categories.includes(filter)) {
-                card.classList.remove('hidden');
-            } else {
-                card.classList.add('hidden');
-            }
-        });
-    });
-});
 
 
 
