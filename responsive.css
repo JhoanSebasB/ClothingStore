@@ -154,12 +154,13 @@
 
 
     .frase{
-        background-color: #000000;
-        color: #fff;
+        
+        color: #000;
         display: flex;
         justify-content: center;
         padding: 10px;
         font-size: 12px;
+        
     }
     aside{
         height: 100vh;
@@ -206,9 +207,7 @@
         padding-left: 40px;
     }
 
-    .oscuro{
-        display: none;
-    }
+    
 
     .just_do_it p{
         font-size:40px;
@@ -224,10 +223,21 @@
         
     }
 
-    
+   
 
+    .boton-carrito {
+        position: absolute; 
+        top: 5px;
+        right: 60px; 
+        color: #000; 
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
     
-
+    .boton-carrito:hover {
+        transform: scale(1.1); 
+    }
+    
     
 }
 /* Responsive pc */
@@ -300,6 +310,9 @@
        
         text-align: center; /* Centra el texto */
         white-space: nowrap; /* Evita que el texto se divida */
+    }
+    .boton-carrito{
+        margin-top: 55px;
     }
     
     
@@ -377,6 +390,7 @@
     footer .support-channel .info span {
         margin: 0; 
     }
+  
 
     
 
