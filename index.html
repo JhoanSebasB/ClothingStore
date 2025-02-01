@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_name" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 
 
     
@@ -42,7 +44,7 @@
         <div id="frase" class="frase" >Ten la libertad de usar lo que te haga sentir UNICO</div>
         <header class="header-mobile">
             <img src="https://nikeco.vtexassets.com/assets/vtex/assets-builder/nikeco.nikeco-nike/2.0.33/nike/img/nike-logo___371bc7e687739441af9a7d0a95668bc4.svg" alt="logo" class="logo">
-           
+            
             <button class="open-menu" id="open-menu">
                 <span class="material-symbols-outlined">menu</span>
             </button>
@@ -55,7 +57,7 @@
                     </span>
                     
             </button>
-            <div class="as">
+            <div class="as" >
             <header class="logo-responsive">
                 
                 <a href="index.html" class="logo-link">
@@ -79,45 +81,10 @@
                         <span class="fi fi-es"></span>
                     </button>
                 </div>
-                <a style="z-index: 10;" class="boton-menu boton-carrito" id="carrito-btn">
-                    <span class="material-symbols-outlined">shopping_cart</span>
-                    <span id="numerito" class="numerito">0</span>
-                </a>
+                
                 
                 <!-- Pared del carrito -->
-                <div id="pared-carrito" class="pared">
-                    <div class="contenido-carrito" style="background-color: #fff;">
-                        <h2 >
-                            Carrito
-                            <button id="cerrar-carrito">
-                                <span class="material-symbols-outlined">close</span>
-                            </button>
-                        </h2>
-                       
-                    </div>
-                    <div class="carrito-items">
-                        <!-- Los 4 primeros elementos se mostrarán normalmente -->
-                    </div>
-                    <div class="slider-container">
-                        <div class="slider">
-                            <!-- El resto de los elementos se mostrarán aquí como slider -->
-                        </div>
-                    </div>
-                    
-                    <div class="carrito-total">
-                        <div class="fila">
-                            <strong>Tu Total</strong>
-                            <span class="carrito-precio-total">
-                                $0.00
-                            </span>
-                        </div>
-                        <!--  <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>-->
-                        <button class="btn-pagar" id="send-whatsapp" onclick="enviarCarritoPorWhatsApp(), actualizarNumerito()">Enviar por WhatsApp  <span class="material-symbols-outlined">
-                            payments
-                            </span></button> 
-
-                    </div>
-                </div>
+               
 
                 <!-- panel carrito 2 -->
 
@@ -130,6 +97,43 @@
             </div>
             
         </aside>
+        <a style="z-index: 15;" class="boton-menu boton-carrito" id="carrito-btn">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span id="numerito" class="numerito">0</span>
+        </a>
+        <div style="z-index: 16;" id="pared-carrito" class="pared">
+            <div class="contenido-carrito" style="background-color: #fff;">
+                <h2 >
+                    Carrito
+                    <button  id="cerrar-carrito">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </h2>
+               
+            </div>
+            <div class="carrito-items">
+                <!-- Los 4 primeros elementos se mostrarán normalmente -->
+            </div>
+            <div class="slider-container">
+                <div class="slider">
+                    <!-- El resto de los elementos se mostrarán aquí como slider -->
+                </div>
+            </div>
+            
+            <div class="carrito-total">
+                <div class="fila">
+                    <strong>Tu Total</strong>
+                    <span class="carrito-precio-total">
+                        $0.00
+                    </span>
+                </div>
+                <!--  <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>-->
+                <button class="btn-pagar" id="send-whatsapp" onclick="enviarCarritoPorWhatsApp(), actualizarNumerito()">Enviar por WhatsApp  <span class="material-symbols-outlined">
+                    payments
+                    </span></button> 
+
+            </div>
+        </div>
         <div class="carousel" style="z-index: 10;">
             <div class="carousel-wrapper">
                 <div class="carousel-text" id="carouselText"></div>
