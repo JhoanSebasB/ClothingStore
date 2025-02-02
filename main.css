@@ -1206,6 +1206,23 @@ footer span.material-symbols-outlined {
     font-size: 22px;
 }
 
+.size-btn, .color-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
+    transition: transform 0.3s ease;
+}
+
+.size-btn.active, .color-btn.active {
+    transform: scale(1.2); /* Aumentar el tamaño del botón cuando está activo */
+    background-color: #000;
+    color: #fff;
+}
+
+
+.size-btn:focus, .color-btn:focus {
+    outline: none;
+}
 
 
 
