@@ -49,17 +49,17 @@ function agregarItemAlCarrito(titulo, precio, imagenSrc, talla, color) {
 
     //controlamos que el item que intenta ingresar no se encuentre en el carrito
     var nombresItemsCarrito = itemsCarrito.getElementsByClassName('carrito-item-titulo');
-    for(var i=0;i < nombresItemsCarrito.length;i++){
+    /*  for(var i=0;i < nombresItemsCarrito.length;i++){
         if(nombresItemsCarrito[i].innerText==titulo){
             alert("El item ya se encuentra en el carrito");
             return;
         }
-    }
+    }*/
 
     // Crear el nuevo item en el carrito
     var itemCarritoContenido = `
     <div class="carrito-item">
-        <img src="${imagenSrc}" width="80px" alt="">
+        <img src="${imagenSrc}" width="80px"  alt="">
         <div class="carrito-item-detalles">
             <span class="carrito-item-titulo">${titulo}</span>
             <div class="selector-cantidad">
@@ -163,7 +163,7 @@ function enviarCarritoPorWhatsApp() {
         var cantidad = itemsCarrito[i].getElementsByClassName('carrito-item-cantidad')[0].value;
         var precio = itemsCarrito[i].getElementsByClassName('carrito-item-precio')[0].innerText;
 
-        mensaje += `• ${titulo}%0A  Talla: ${color}%0A  Color: ${tamaño}%0A  Cantidad: ${cantidad}%0A   Precio: ${precio}%0A%0A`;
+        mensaje += `• ${titulo}%0A   ${color}%0A   ${tamaño}%0A   Cantidad: ${cantidad}%0A   Precio: ${precio}%0A%0A`;
     }
 
     var total = calcularTotalCarrito();
