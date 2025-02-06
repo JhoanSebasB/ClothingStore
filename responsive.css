@@ -9,7 +9,7 @@
         padding: 0rem;
         
     }
-    .boton-carrito{
+    .boton-carrito, .boton-login{
         
         right: 10px;
     }
@@ -225,7 +225,7 @@
 
    
 
-    .boton-carrito {
+    .boton-carrito, .boton-login {
         position: absolute; 
         top: 5px;
         right: 60px; 
@@ -234,8 +234,16 @@
         transition: transform 0.3s ease;
     }
     
-    .boton-carrito:hover {
+    .boton-carrito, .boton-login:hover {
         transform: scale(1.1); 
+    }
+
+    .boton-carrito{
+        transform: translateX(-30px);
+    }
+
+    .language-icons{
+        display: block;
     }
     
     
@@ -266,7 +274,7 @@
 
     }
     
-    .boton-carrito{
+    .boton-carrito, .boton-login{
     margin-right: 0%;
     position: absolute;
     margin-left: 90%;
@@ -311,8 +319,11 @@
         text-align: center; /* Centra el texto */
         white-space: nowrap; /* Evita que el texto se divida */
     }
-    .boton-carrito{
+    .boton-carrito, .boton-login{
         margin-top: 55px;
+    }
+    .boton-login{
+        transform: translateX(70px);
     }
     
     
