@@ -42,11 +42,24 @@ const messages = {
         "Free returns\nSee details",
     ],
 };
+function updateCarouselText(lang) {
+    const carouselTextElement = document.getElementById("carouselText");
+    carouselTextElement.innerHTML = ""; // Limpiar contenido previo
+
+    // Insertar cada mensaje con el ícono
+    carouselMessages[lang].forEach(msg => {
+        const messageElement = document.createElement("p");
+        messageElement.textContent = msg; // Agregar el mensaje
+        carouselTextElement.appendChild(messageElement);
+    });
+}
 
 let index = 0;
 let currentLanguage = "es";  // Definir el idioma actual
 
 const carouselText = document.getElementById("carouselText");
+
+
 
 function updateText() {
     const message = messages[currentLanguage][index];
@@ -153,4 +166,36 @@ const executeCodes = () => {
 window.addEventListener("load", executeCodes);
 
 
+
+
+
+/* Cambiar idioma */
+
+
+const idiomaActual = document.getElementById('idioma');
+const listaIdiomas = document.getElementById('idiomas');
+const opciones = document.querySelectorAll('.opcion');
+
+// Alternar visibilidad de la lista de idiomas
+idiomaActual.addEventListener('click', (event) => {
+    event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+    listaIdiomas.classList.toggle('toggle');
+});
+
+// Cambiar idioma al seleccionar una opción
+opciones.forEach((opcion) => {
+    opcion.addEventListener('click', () => {
+        const iconoActual = idiomaActual.querySelector('.fi'); // Icono del idioma actual
+        const nuevoIcono = opcion.querySelector('.fi'); // Icono del idioma seleccionado
+
+        // Verificar si el icono seleccionado es diferente al actual
+        if (iconoActual.className !== nuevoIcono.className) {
+            // Intercambiar el icono del idioma actual con el seleccionado
+            iconoActual.className = nuevoIcono.className;
+        }
+
+        // Ocultar la lista de idiomas después de seleccionar uno
+        listaIdiomas.classList.remove('toggle');
+    });
+});
 
