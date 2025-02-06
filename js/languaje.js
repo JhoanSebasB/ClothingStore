@@ -1,5 +1,6 @@
 const translations = {
     en: {
+        id: "en",
         frase: "Feel free to use whatever makes you feel UNIQUE.",
         opcionH: "Men",
         opcionM: "Women",
@@ -15,8 +16,12 @@ const translations = {
         size: "Size:",
         herobutton: "Explore collection",
         herosub: "Style, comfort and quality in every step.",
+        selectSizeColor: "Please select size and color before purchasing.",
+        idiomaI: "English",
+        idiomaE: "Spanish",
     },
     es: {
+        id: "es",
         frase: "Ten la libertad de usar lo que te haga sentir ÚNICO.",
         opcionH: "Hombre",
         opcionM: "Mujer",
@@ -31,15 +36,23 @@ const translations = {
         mujer: "Mujer",
         size: "Tamaño:",
         herosub: "Estilo, confort y calidad en cada paso.",
+        selectSizeColor: "Por favor, selecciona la talla y el color antes de comprar.",
+        idiomaI: "Ingles",
+        idiomaE: "Español",
     }
 };
+
+let currentLang = localStorage.getItem("lang") || "en"; // Carga el idioma guardado o usa inglés
 
 document.getElementById("btn-es").addEventListener("click", () => changeLanguage("es"));
 document.getElementById("btn-en").addEventListener("click", () => changeLanguage("en"));
 
 function changeLanguage(lang) {
-    // Actualiza elementos con id únicos
-    const uniqueIds = ["frase", "opcionH", "opcionM", "opcionA", "terminos", "politica", "Location", "Follow", "Payment", "Support", "herobutton", "herosub"];
+    localStorage.setItem("lang", lang);
+    currentLang = lang;
+
+    // Actualiza los elementos con ID únicos
+    const uniqueIds = ["frase", "opcionH", "opcionM", "opcionA", "terminos", "politica", "Location", "Follow", "Payment", "Support", "herobutton", "herosub", "idiomaI", "idiomaE"];
     uniqueIds.forEach(id => {
         const element = document.getElementById(id);
         if (element && translations[lang][id]) {
@@ -55,9 +68,14 @@ function changeLanguage(lang) {
         }
     });
 
-    // Llama a otras funciones relacionadas, si las necesitas
+    // Traduce automáticamente los mensajes de error si están visibles
+    document.querySelectorAll(".shoe-details-message").forEach(element => {
+        element.textContent = translations[lang].selectSizeColor;
+    });
+
+    // Llamada a otras funciones si es necesario
     setCarouselLanguage(lang);
 }
 
-// Inicializa el idioma por defecto
-changeLanguage("en");
+// Inicializa el idioma al cargar la página
+changeLanguage(currentLang);
