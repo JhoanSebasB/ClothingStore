@@ -60,18 +60,19 @@ const shoesData = [
               </button>
           </div>
           <p class="card-name" id="card-name">${shoe.name} <span>${shoe.category}</span></p>
-          <div class="size-buttons">
-              <p>Size: </p>
-              ${shoe.sizes.map(size => `
-                  <button class="size-btn" onclick="selectSize('${size}', '${shoe.name}', '${shoe.price}', '${shoe.imageId}')" aria-label="Size ${size}">${size}</button>
-              `).join('')}
+          <div class="size-buttons" id="size-buttons-${shoe.imageId}">
+            <p>Size: </p>
+            ${shoe.sizes.map(size => `
+            <button class="size-btn" onclick="selectSize('${size}', '${shoe.name}', '${shoe.price}', '${shoe.imageId}')" aria-label="Size ${size}">${size}</button>
+           `).join('')}
           </div>
-          <div class="color-buttons">
+          <div class="color-buttons" id="color-buttons-${shoe.imageId}">
               <p>Color: </p>
               ${shoe.colors.map(color => `
-                  <button class="color-btn-${color.toLowerCase()}" onclick="selectColor('${color}', '${shoe.name}', '${shoe.price}', '${shoe.imageId}'); changeShoeColor(${shoe.colors.indexOf(color)}, '${shoe.imageId}')" aria-label="${color} Color"></button>
-              `).join('')}
+               <button class="color-btn-${color.toLowerCase()}" onclick="selectColor('${color}', '${shoe.name}', '${shoe.price}', '${shoe.imageId}'); changeShoeColor(${shoe.colors.indexOf(color)}, '${shoe.imageId}')" aria-label="${color} Color"></button>
+             `).join('')}
           </div>
+
           <p class="card-price">${shoe.price}</p>
           <div class="bottons-buy">
               <button class="buy" id="save-button-${shoe.id}" onmouseover="showMessage(${shoe.id})" onmouseout="hideMessage(${shoe.id})" onclick="saveShoeDetails('${shoe.imageId}')" disabled>Buy Now <div id="shoe-details-${shoe.id}" style="display: none;"></div></button>
