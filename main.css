@@ -81,6 +81,94 @@ aside {
    
 }
 
+
+
+/* buscar producto */ 
+.search-container {
+    position: relative;
+    width: 10%;
+    top: -40px;
+    right: 30%;
+  }
+  
+  .search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .search-input {
+    width: 100%;
+    border: none;
+    background: none;
+    color: #000;
+    font-size: 16px;
+    padding: 10px;
+    outline: none;
+  }
+  
+  .search-input::placeholder {
+    color: #aaa;
+  }
+  
+  .search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-icon svg {
+    fill: #000;
+  }
+  
+  .search-icon:hover {
+    background-color: #555;
+  }
+  
+  .search-bar:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  }
+  
+  .search-bar:focus-within {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  }
+  
+  .glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 200%;
+    border-radius: 100px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    transition: all 0.5s ease;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: -1;
+  }
+  
+  .search-bar:hover + .glow {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .search-bar:focus-within + .glow {
+    transform: translate(-50%, -50%) scale(1.2);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+  }
+  
+
+
+
+  /*  
+
 .language-icons{
     z-index: 10;
 }
@@ -94,6 +182,7 @@ aside {
     padding: 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
     
 }
 
@@ -102,21 +191,53 @@ aside {
     background-color: #f0f0f0;
     transform: scale(1.1);
     
+}*/
+
+.language-icons{
+    padding: 10px;
 }
 
 
 
+/* Ocultar lista de idiomas por defecto */
+.idiomas {
+    position: absolute;
+    width: 110px;
+    top: 35px;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
+.idiomas li {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.idiomas li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Mostrar lista cuando está activa */
+.toggle {
+    visibility: visible;
+}
 
 /* Carrito boton */
 
-.boton-carrito {
+.boton-carrito, .boton-login {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: #333;
     font-size: 1.2rem;
-    gap: .5rem;
+    
     margin-left: -2.5rem;
     margin-top: 50px;
     
@@ -1228,8 +1349,126 @@ footer span.material-symbols-outlined {
 
 
 
+.login-container {
+    display: none; 
+    background-color: #fff;
+    width: 350px;
+    height: 350px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: fixed; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 1000; 
+}
 
+/* Botón de cerrar */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+}
 
+/* cerrar boton*/
+.close-btn:hover {
+    color: #ff0000; 
+}
 
+/* Título */
+.titulo-login {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    margin-top: 20px;  
+}
 
+/* Formulario */
+.formulario {
+    list-style: none;
+    padding: 0;
+}
 
+.formulario li {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+/* Inputs con iconos */
+.formulario input {
+    width: 80%;
+    padding: 10px 40px; 
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease; 
+}
+
+.formulario input:focus {
+    border-color: #007bff; 
+}
+
+/* Iconos */
+.formulario li i {
+    position: absolute;
+    left: 45px;  
+    top: 69%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #555;
+}
+
+/* Icono de ojo */
+.eye-icon {
+    cursor: pointer;
+}
+
+/* Cambiar contraseña */
+.cambiar-contra {
+    font-size: 12px;
+    text-decoration: none;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.cambiar-contra:hover {
+    text-decoration: underline;
+}
+
+/* Botón login */
+.login-btn {
+    padding: 10px;
+    width: 80%;
+    border: none;
+    background-color: #007bff;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #0056b3; 
+}
+
+/* Estilos para la capa de fondo (overlay) */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
+    z-index: 999; /* Asegura que el overlay esté por encima del contenido */
+    display: none; /* Inicialmente oculto */
+}
