@@ -1,6 +1,6 @@
 /* Cambiar imágenes en las cards */ 
 
-// Arreglos de imágenes para cada categoría
+
 const shoeColors = [
     // Negro
     [
